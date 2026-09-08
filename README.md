@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AussieBooks
+
+Marketing site for AussieBooks — financial clarity for modern Australian businesses.
+
+Built with Next.js 16 (App Router), React 19, TypeScript and Tailwind CSS 4.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  layout.tsx        Root layout — fonts, metadata, Navbar + Footer
+  globals.css       Design tokens, base styles
+  icon.svg          Brand mark used as the favicon
+  page.tsx          /
+  about/page.tsx    /about
+  features/page.tsx /features
+  contact/page.tsx  /contact
+components/
+  Navbar.tsx        Sticky header, frosted on scroll, with a reading-progress bar
+  Footer.tsx
+  Reveal.tsx        Scroll-into-view fade + lift wrapper (IntersectionObserver)
+  SpotlightCard.tsx Card that lifts and tracks the cursor with a mint highlight
+  HomePage.tsx      Page bodies (client components — hover/scroll interactions)
+  AboutPage.tsx
+  FeaturesPage.tsx
+  ContactPage.tsx
+```
 
-## Learn More
+Route files under `app/` are server components that own the per-page `metadata`; each
+renders its matching client component from `components/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Design system
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Defined in `app/globals.css` (`@theme`) and applied via inline styles in the components.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Token | Value |
+| --- | --- |
+| navy | `#0D2137` |
+| teal | `#145F5A` |
+| mint | `#4EC994` |
+| mint-light | `#D4F5E5` |
+| off-white | `#F5F7F5` |
+| charcoal | `#141E26` |
+| muted | `#64748B` |
+| border | `#E2E8E4` |
 
-## Deploy on Vercel
+Typefaces are loaded with `next/font/google` in `app/layout.tsx` and exposed as
+`--font-jakarta` (Plus Jakarta Sans) and `--font-dm-mono` (DM Mono).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Motion
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Keyframes and helper classes live in the "Motion" block of `app/globals.css`; nothing
+is pulled in from an animation library.
+
+| Class / component | Effect |
+| --- | --- |
+| `<Reveal>` | Fades and lifts children in when scrolled into view. `delay` staggers siblings. |
+| `<SpotlightCard>` | Hover lift plus a mint radial glow that follows the cursor. |
+| `.ab-enter` | On-load entrance for above-the-fold content; stagger with `animationDelay`. |
+| `.ab-drift` | Slow-drifting colour wash behind hero and CTA panels. |
+| `.ab-float` / `.ab-float-slow` | Gentle opposing-phase bob for the hero chips. |
+| `.ab-hero-card` | Hero product card: rises in, then settles into a float. |
+| `.ab-pulse` | Soft pulsing ring on the "live" status dots. |
+| `.ab-sweep` | Light sweep across a button on hover (needs a `.ab-sweep-shine` child). |
+| `.ab-stagger` / `.ab-bar` | Children that cascade or grow once their `Reveal` fires. |
+
+Everything is disabled under `prefers-reduced-motion: reduce`, and a `<noscript>` rule in
+the root layout unhides revealed content when JavaScript is off.
+
+## Notes
+
+- The contact form is presentation only — `handleSubmit` shows a success state and does
+  not post anywhere yet. Wire it to a route handler or form service before launch.
+- All four routes are statically prerendered.
+
+## Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the dev server |
+| `npm run build` | Production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | ESLint |
