@@ -31,7 +31,7 @@ const features = [
     num: "01",
     name: "Automated Reconciliation",
     tagline: "Reconciliation that runs itself.",
-    body: "AussieBooks connects to your bank feeds and automatically matches transactions against your records — every day, without you lifting a finger. Exceptions are surfaced clearly so your team only reviews what actually needs attention.",
+    body: "Accountant Genie connects to your bank feeds and automatically matches transactions against your records — every day, without you lifting a finger. Exceptions are surfaced clearly so your team only reviews what actually needs attention.",
     bullets: [
       "Supports all major Australian banks and financial institutions",
       "Intelligent matching rules that learn from your corrections",
@@ -118,7 +118,7 @@ const features = [
     num: "03",
     name: "Financial Insights",
     tagline: "See what your numbers are actually telling you.",
-    body: "AussieBooks analyses your financial data and surfaces meaningful patterns — cashflow forecasts, anomaly detection, overdue receivables, and tax obligations — so your team can act before problems compound.",
+    body: "Accountant Genie analyses your financial data and surfaces meaningful patterns — cashflow forecasts, anomaly detection, overdue receivables, and tax obligations — so your team can act before problems compound.",
     bullets: [
       "Cashflow forecasting based on historical patterns",
       "Anomaly detection for unusual transactions or variances",
@@ -177,7 +177,7 @@ const features = [
     num: "04",
     name: "Multi-entity Management",
     tagline: "Manage every entity from one platform.",
-    body: "Whether you run a single company or a group of related entities, AussieBooks gives you consolidated visibility and entity-level drill-down — without the complexity of managing multiple disconnected systems.",
+    body: "Whether you run a single company or a group of related entities, Accountant Genie gives you consolidated visibility and entity-level drill-down — without the complexity of managing multiple disconnected systems.",
     bullets: [
       "Consolidated group reporting across all entities",
       "Entity-level permissions and user access controls",
@@ -188,8 +188,8 @@ const features = [
       <div style={{ background: "#F5F7F5", borderRadius: 14, padding: 24 }}>
         <p style={{ margin: "0 0 14px", fontSize: 12, fontWeight: 700, color: "#64748B", textTransform: "uppercase", letterSpacing: "0.08em" }}>Group Overview</p>
         {[
-          { name: "AussieBooks Holdings Pty Ltd", revenue: "$284,600", status: "Active" },
-          { name: "AussieBooks Services Pty Ltd", revenue: "$91,200", status: "Active" },
+          { name: "Accountant Genie Holdings Pty Ltd", revenue: "$284,600", status: "Active" },
+          { name: "Accountant Genie Services Pty Ltd", revenue: "$91,200", status: "Active" },
           { name: "Northgate Properties Trust", revenue: "$48,300", status: "Active" },
         ].map((entity) => (
           <div
@@ -249,7 +249,7 @@ export default function Features() {
             Everything you need to simplify financial work.
           </h1>
           <p style={{ fontSize: 18, color: "#64748B", lineHeight: 1.7, margin: "0 0 36px" }}>
-            AussieBooks brings together the tools your finance team relies on every day — built for the Australian market, designed to work the way you do.
+            Accountant Genie brings together the tools your finance team relies on every day — built for the Australian market, designed to work the way you do.
           </p>
           <Link
             href="/contact"
@@ -358,7 +358,7 @@ export default function Features() {
         />
         <Reveal style={{ maxWidth: 600, margin: "0 auto", position: "relative" }}>
           <h2 style={{ margin: "0 0 20px", fontSize: "clamp(28px, 3.5vw, 44px)", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.025em", color: "#fff" }}>
-            See AussieBooks working for your business.
+            See Accountant Genie working for your business.
           </h2>
           <p style={{ fontSize: 17, color: "rgba(255,255,255,0.6)", margin: "0 0 36px", lineHeight: 1.7 }}>
             Our team will walk you through a tailored demo — no generic slide decks, just your actual workflows.

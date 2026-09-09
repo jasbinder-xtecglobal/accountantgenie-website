@@ -1,0 +1,106 @@
+import type { Section } from "../policies";
+
+export const recordRetentionSections: Section[] = [
+  {
+    id: "overview",
+    title: "Overview",
+    body: [
+      "This policy forms part of the Terms of Service and the Privacy Policy. It governs how Sparkview collects, stores, retains, deletes and handles records and personal information, consistent with applicable Australian laws, including:",
+      [
+        "the Privacy Act 1988 (Cth) and the Australian Privacy Principles;",
+        "the Corporations Act 2001 (Cth);",
+        "the Anti-Money Laundering and Counter-Terrorism Financing Act 2006 (Cth), where applicable;",
+        "the Electronic Transactions Act 1999 (Cth); and",
+        "applicable taxation and record-keeping obligations administered by the Australian Taxation Office.",
+      ],
+    ],
+  },
+  {
+    id: "retention-of-records",
+    title: "Retention of records",
+    body: [
+      { heading: "12.1 Retention of records" },
+      "We may collect, retain, store, process, archive and back up records for purposes including:",
+      [
+        "providing and maintaining the Services;",
+        "taxation and accounting compliance;",
+        "identity verification and fraud prevention;",
+        "audit and compliance;",
+        "dispute resolution and enforcement of legal rights;",
+        "cybersecurity, monitoring and incident response;",
+        "backup, disaster recovery and business continuity; and",
+        "compliance with applicable laws, court orders, subpoenas or regulatory requests.",
+      ],
+      "Records may include, without limitation:",
+      [
+        "uploaded documents and financial records;",
+        "tax files and supporting evidence;",
+        "AI-generated Output;",
+        "user communications and support correspondence;",
+        "login records, IP addresses, timestamps and system activity logs;",
+        "billing and subscription records;",
+        "encrypted backups and archived datasets;",
+        "Bank Feed Data accessed through Fiskil;",
+        "AI Memory data, being your approved categorisation and reconciliation behaviour; and",
+        "depreciation schedules and fixed asset registers.",
+      ],
+      { heading: "12.2 AI Memory data" },
+      "AI Memory is optional. It stores the adjustments you approve, improves categorisation over time, and can operate at client level or firm-wide level. AI Memory data is stored in Sparkview's database and is held within your account.",
+      "You can configure or disable AI Memory at any time, and you can request deletion of AI Memory data, subject to any legal retention obligations.",
+      { heading: "12.3 Minimum retention periods" },
+      "Where required by law, we may retain records for the applicable statutory minimum period. Otherwise, we determine appropriate retention periods having regard to the nature and sensitivity of the information, our legal and regulatory obligations, operational and security requirements, dispute or litigation risk, and our legitimate business interests.",
+    ],
+  },
+  {
+    id: "your-responsibility",
+    title: "Your acknowledgement and responsibility",
+    body: [
+      { heading: "12.4 Your acknowledgement and responsibility" },
+      "You acknowledge and agree that:",
+      [
+        "Sparkview is not a permanent archival or custodial storage service unless we expressly agree otherwise in writing;",
+        "you remain solely responsible for maintaining independent backups and copies of your records;",
+        "you must retain any records necessary to satisfy your own taxation, accounting, legal or regulatory obligations;",
+        "deletion requests may be subject to legal, compliance, security or operational restrictions; and",
+        "we may retain certain information after account closure where reasonably required by law or by our legitimate business interests.",
+      ],
+    ],
+  },
+  {
+    id: "termination-and-deletion",
+    title: "Account termination and deletion",
+    body: [
+      { heading: "12.5 Account termination and deletion" },
+      "On account closure, termination, suspension or prolonged inactivity, we may:",
+      [
+        "restrict or revoke access to stored records;",
+        "archive information for compliance and security purposes;",
+        "permanently delete records from active systems;",
+        "anonymise or de-identify data; or",
+        "retain limited residual backup copies until they are overwritten in the ordinary course of operations.",
+      ],
+      "Deletion requests are handled consistently with applicable Australian privacy laws, including APP 11, which requires us to take reasonable steps to destroy or de-identify personal information that is no longer required.",
+      { heading: "12.6 Legal holds and disclosure" },
+      "Despite any deletion request, we may preserve, disclose or retain records where required to:",
+      [
+        "comply with applicable laws;",
+        "respond to lawful requests from courts, tribunals, regulators or authorities;",
+        "investigate suspected unlawful activity, fraud or security breaches;",
+        "enforce our contractual rights or defend legal claims; or",
+        "protect the rights, property or safety of Sparkview, its users or third parties.",
+      ],
+    ],
+  },
+  {
+    id: "security-and-liability",
+    title: "Security, liability and amendments",
+    body: [
+      { heading: "12.7 Security and storage" },
+      "We implement commercially reasonable safeguards to protect stored records. You acknowledge that no electronic storage or transmission method is completely secure, that we cannot guarantee absolute security or uninterrupted availability, and that, subject to the Australian Consumer Law, you upload and store information at your own risk to the maximum extent permitted by law.",
+      { heading: "12.8 Limitation of liability" },
+      "To the maximum extent permitted by law, and subject to the Australian Consumer Law, we exclude liability for any loss, corruption, deletion, inaccessibility, unauthorised access or failure to recover records, except where that liability cannot lawfully be excluded. You are responsible for maintaining independent backups of all important documents and records.",
+      { heading: "12.9 Amendments" },
+      "We may amend this policy from time to time. Section 1.16 of the Terms of Service applies to any amendment.",
+    ],
+  },
+];

@@ -391,7 +391,7 @@ export default function Home() {
                 maxWidth: 480,
               }}
             >
-              AussieBooks brings your financial workflows into one intelligent platform. Less manual work, fewer errors, and the real-time visibility your business needs to move forward.
+              Accountant Genie brings your financial workflows into one intelligent platform. Less manual work, fewer errors, and the real-time visibility your business needs to move forward.
             </p>
 
             <div className="ab-enter" style={{ animationDelay: "0.24s", display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
@@ -607,7 +607,7 @@ export default function Home() {
         >
           {/* Left */}
           <Reveal>
-            <Tag>The AussieBooks way</Tag>
+            <Tag>The Accountant Genie way</Tag>
             <h2
               style={{
                 margin: "24px 0 24px",
@@ -621,7 +621,7 @@ export default function Home() {
               One platform for your entire financial workflow.
             </h2>
             <p style={{ fontSize: 17, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, margin: "0 0 40px" }}>
-              AussieBooks connects your accounts, automates your processes, and surfaces the insights you need — so your finance team can work on things that actually matter.
+              Accountant Genie connects your accounts, automates your processes, and surfaces the insights you need — so your finance team can work on things that actually matter.
             </p>
             <PrimaryBtn href="/features">Explore features</PrimaryBtn>
           </Reveal>
@@ -678,7 +678,7 @@ export default function Home() {
             Built for serious financial work.
           </h2>
           <p style={{ fontSize: 17, color: "#64748B", lineHeight: 1.7, margin: 0 }}>
-            Every feature in AussieBooks was designed around how finance professionals actually work — not how software vendors think they should.
+            Every feature in Accountant Genie was designed around how finance professionals actually work — not how software vendors think they should.
           </p>
         </Reveal>
 
@@ -756,7 +756,7 @@ export default function Home() {
               Reconciliation that runs itself.
             </h3>
             <p style={{ fontSize: 16, color: "#64748B", lineHeight: 1.7, margin: "0 0 24px" }}>
-              Stop spending Friday afternoons matching transactions. AussieBooks automatically reconciles bank feeds against your records, flagging only the exceptions that need your attention.
+              Stop spending Friday afternoons matching transactions. Accountant Genie automatically reconciles bank feeds against your records, flagging only the exceptions that need your attention.
             </p>
             <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
               {["Supports all major Australian banks", "Smart categorisation and matching rules", "Exception alerts in real time"].map((pt) => (
@@ -814,7 +814,7 @@ export default function Home() {
             {
               num: "03 — Insights",
               title: "Know your financial position at a glance.",
-              body: "AussieBooks surfaces trends, anomalies, and opportunities across your accounts — giving your team actionable context, not just raw numbers.",
+              body: "Accountant Genie surfaces trends, anomalies, and opportunities across your accounts — giving your team actionable context, not just raw numbers.",
               visual: (
                 <div style={{ background: "#F5F7F5", borderRadius: 12, padding: 20 }}>
                   <p style={{ margin: "0 0 14px", fontSize: 11, fontWeight: 600, color: "#64748B", textTransform: "uppercase", letterSpacing: "0.08em" }}>Insights</p>
@@ -940,7 +940,7 @@ export default function Home() {
               {
                 step: "02",
                 title: "Automate",
-                body: "AussieBooks handles reconciliation, categorisation, and routine reporting — automatically, every day.",
+                body: "Accountant Genie handles reconciliation, categorisation, and routine reporting — automatically, every day.",
               },
               {
                 step: "03",
@@ -987,7 +987,7 @@ export default function Home() {
       {/* ─── Benefits / Stats ─── */}
       <section style={{ maxWidth: 1280, margin: "0 auto", padding: "112px 32px" }}>
         <Reveal style={{ textAlign: "center", maxWidth: 520, margin: "0 auto 72px" }}>
-          <Tag>Why AussieBooks</Tag>
+          <Tag>Why Accountant Genie</Tag>
           <h2
             style={{
               margin: "24px 0 0",
@@ -1033,7 +1033,7 @@ export default function Home() {
                 <path d="M2 20h20M6 20V10l6-6 6 6v10M10 20v-5h4v5" stroke="#4EC994" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
               ),
               headline: "Confidence in your numbers",
-              body: "Decisions are only as good as the data behind them. AussieBooks gives you a single source of financial truth, always current.",
+              body: "Decisions are only as good as the data behind them. Accountant Genie gives you a single source of financial truth, always current.",
             },
           ].map((item, i) => (
             <Reveal key={item.headline} delay={i * 120}>
@@ -1104,7 +1104,7 @@ export default function Home() {
             Simplify your financial workflow today.
           </h2>
           <p style={{ fontSize: 17, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, margin: "0 0 40px" }}>
-            Join the finance teams choosing clarity over complexity. Get AussieBooks working for your business in minutes.
+            Join the finance teams choosing clarity over complexity. Get Accountant Genie working for your business in minutes.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <Link

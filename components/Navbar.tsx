@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -85,24 +86,15 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}>
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="28" height="28" rx="7" fill="#0D2137" />
-            <path d="M8 20V10l6-2 6 2v10" stroke="#4EC994" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M11 20v-6h6v6" stroke="#4EC994" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            <rect x="12.5" y="10" width="3" height="3" rx="0.5" fill="#4EC994" opacity="0.5" />
-          </svg>
-          <span
-            style={{
-              fontFamily: "var(--font-jakarta)",
-              fontWeight: 700,
-              fontSize: 19,
-              letterSpacing: "-0.02em",
-              color: "#0D2137",
-            }}
-          >
-            AussieBooks
-          </span>
+        <Link href="/" aria-label="Accountant Genie home" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+          <Image
+            src="/logo.svg"
+            alt="Accountant Genie"
+            width={250}
+            height={32}
+            priority
+            style={{ height: 32, width: "auto", display: "block" }}
+          />
         </Link>
 
         {/* Desktop nav */}

@@ -19,11 +19,11 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "AussieBooks — Financial clarity for modern Australian businesses",
-    template: "%s | AussieBooks",
+    default: "Accountant Genie — Financial clarity for modern Australian businesses",
+    template: "%s | Accountant Genie",
   },
   description:
-    "AussieBooks brings your financial workflows into one intelligent platform. Less manual work, fewer errors, and the real-time visibility your business needs to move forward.",
+    "Accountant Genie brings your financial workflows into one intelligent platform. Less manual work, fewer errors, and the real-time visibility your business needs to move forward.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -135,7 +135,7 @@ export default function Contact() {
             Let&#39;s talk.
           </h1>
           <p style={{ fontSize: 18, color: "#64748B", lineHeight: 1.7, margin: 0 }}>
-            Have questions about AussieBooks? Want to see a live demo? We&#39;d love to hear from you.
+            Have questions about Accountant Genie? Want to see a live demo? We&#39;d love to hear from you.
           </p>
         </div>
       </section>
@@ -157,7 +157,7 @@ export default function Contact() {
               We&#39;re here to help.
             </h2>
             <p style={{ fontSize: 16, color: "#64748B", lineHeight: 1.75, margin: "0 0 48px" }}>
-              Whether you&#39;re evaluating AussieBooks for your business, need product support, or just want to learn more — reach out and we&#39;ll get back to you promptly.
+              Whether you&#39;re evaluating Accountant Genie for your business, need product support, or just want to learn more — reach out and we&#39;ll get back to you promptly.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
@@ -167,7 +167,7 @@ export default function Contact() {
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#145F5A" strokeWidth="1.8" fill="none" strokeLinejoin="round" />
                   ),
                   label: "Email",
-                  value: "hello@aussiebooks.com.au",
+                  value: "hello@accountantgenie.com.au",
                 },
                 {
                   icon: (
@@ -213,7 +213,7 @@ export default function Contact() {
                 Prefer a live walkthrough?
               </p>
               <p style={{ margin: "0 0 20px", fontSize: 14, color: "rgba(255,255,255,0.6)", lineHeight: 1.6 }}>
-                Book a 30-minute personalised demo with our team. We&#39;ll show you AussieBooks on your actual workflow — not a generic slide deck.
+                Book a 30-minute personalised demo with our team. We&#39;ll show you Accountant Genie on your actual workflow — not a generic slide deck.
               </p>
               <a
                 href="#"

@@ -52,7 +52,7 @@ export default function About() {
           }}
         />
         <div className="ab-enter" style={{ position: "relative", maxWidth: 700, margin: "0 auto" }}>
-          <Tag>About AussieBooks</Tag>
+          <Tag>About Accountant Genie</Tag>
           <h1
             style={{
               margin: "24px 0 20px",
@@ -66,7 +66,7 @@ export default function About() {
             Building a simpler future for finance.
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, margin: 0 }}>
-            We started AussieBooks because finance work shouldn&#39;t be this hard. The tools exist — they just weren&#39;t designed for the way modern businesses actually operate.
+            We started Accountant Genie because finance work shouldn&#39;t be this hard. The tools exist — they just weren&#39;t designed for the way modern businesses actually operate.
           </p>
         </div>
       </section>
@@ -97,7 +97,7 @@ export default function About() {
               A team that knows finance from the inside.
             </h2>
             <p style={{ fontSize: 17, color: "#64748B", lineHeight: 1.75, margin: "0 0 20px" }}>
-              AussieBooks was founded by accountants, engineers, and product builders who spent years watching finance teams struggle with fragmented tools, repetitive manual work, and data they couldn&#39;t fully trust.
+              Accountant Genie was founded by accountants, engineers, and product builders who spent years watching finance teams struggle with fragmented tools, repetitive manual work, and data they couldn&#39;t fully trust.
             </p>
             <p style={{ fontSize: 17, color: "#64748B", lineHeight: 1.75, margin: 0 }}>
               We built the platform we always wished existed — designed for the real complexity of Australian business finance, not a simplified version of it.
@@ -107,7 +107,7 @@ export default function About() {
           {/* Visual — timeline-style */}
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
             {[
-              { year: "2022", event: "AussieBooks founded in Sydney, Australia" },
+              { year: "2022", event: "Accountant Genie founded in Sydney, Australia" },
               { year: "2023", event: "First version launched with core reconciliation and reporting" },
               { year: "2024", event: "Expanded to support multi-entity businesses and advisory firms" },
               { year: "2026", event: "Trusted by finance teams across Australia" },
@@ -221,7 +221,7 @@ export default function About() {
             },
             {
               value: "Customer-first",
-              body: "We're accountable to the finance professionals who rely on AussieBooks every day. Their success is the only measure that matters.",
+              body: "We're accountable to the finance professionals who rely on Accountant Genie every day. Their success is the only measure that matters.",
               num: "04",
             },
           ].map((item, i) => (
@@ -280,10 +280,10 @@ export default function About() {
         />
         <Reveal style={{ maxWidth: 600, margin: "0 auto", position: "relative" }}>
           <h2 style={{ margin: "0 0 20px", fontSize: "clamp(28px, 3.5vw, 44px)", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.025em", color: "#fff" }}>
-            Ready to see AussieBooks in action?
+            Ready to see Accountant Genie in action?
           </h2>
           <p style={{ fontSize: 17, color: "rgba(255,255,255,0.6)", margin: "0 0 36px", lineHeight: 1.7 }}>
-            Talk to our team. We&#39;ll show you exactly how AussieBooks can work for your business.
+            Talk to our team. We&#39;ll show you exactly how Accountant Genie can work for your business.
           </p>
           <Link
             href="/contact"

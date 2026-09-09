@@ -1,6 +1,6 @@
-# AussieBooks
+# Accountant Genie
 
-Marketing site for AussieBooks — financial clarity for modern Australian businesses.
+Marketing site for Accountant Genie — financial clarity for modern Australian businesses.
 
 Built with Next.js 16 (App Router), React 19, TypeScript and Tailwind CSS 4.
 
