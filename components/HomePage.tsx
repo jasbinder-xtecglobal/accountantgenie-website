@@ -18,9 +18,9 @@ function Tag({ children, tone = "light" }: { children: React.ReactNode; tone?: "
         fontWeight: 700,
         letterSpacing: "0.1em",
         textTransform: "uppercase",
-        color: onDark ? "#4EC994" : "#145F5A",
-        background: onDark ? "rgba(78,201,148,0.14)" : "rgba(78,201,148,0.12)",
-        border: `1px solid rgba(78,201,148,${onDark ? 0.38 : 0.25})`,
+        color: onDark ? "#60A5FA" : "#1D4ED8",
+        background: onDark ? "rgba(59,130,246,0.14)" : "rgba(59,130,246,0.12)",
+        border: `1px solid rgba(59,130,246,${onDark ? 0.38 : 0.25})`,
         padding: "5px 12px",
         borderRadius: 100,
       }}
@@ -46,9 +46,11 @@ function PrimaryBtn({ href, children }: { href: string; children: React.ReactNod
         textDecoration: "none",
         padding: "13px 26px",
         borderRadius: 10,
-        background: hov ? "#145F5A" : "#0D2137",
+        background: hov
+          ? "linear-gradient(135deg, #2563EB 0%, #1E3A8A 100%)"
+          : "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
         transform: hov ? "translateY(-2px)" : "none",
-        boxShadow: hov ? "0 12px 28px rgba(13,33,55,0.22)" : "0 0 0 rgba(13,33,55,0)",
+        boxShadow: hov ? "0 12px 28px rgba(29,78,216,0.35)" : "0 0 0 rgba(29,78,216,0)",
         transition:
           "background 0.2s ease, transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease",
       }}
@@ -106,7 +108,7 @@ function ProductUI() {
       style={{
         background: "#fff",
         borderRadius: 16,
-        border: "1px solid #E2E8E4",
+        border: "1px solid #E2E8F0",
         overflow: "hidden",
         boxShadow: "0 24px 80px rgba(13,33,55,0.12), 0 4px 16px rgba(13,33,55,0.06)",
         fontFamily: "var(--font-jakarta)",
@@ -117,7 +119,7 @@ function ProductUI() {
       {/* Header */}
       <div style={{ background: "#0D2137", padding: "18px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div className="ab-pulse" style={{ width: 8, height: 8, borderRadius: "50%", background: "#4EC994" }} />
+          <div className="ab-pulse" style={{ width: 8, height: 8, borderRadius: "50%", background: "#60A5FA" }} />
           <span style={{ color: "rgba(255,255,255,0.8)", fontSize: 13, fontWeight: 500 }}>Financial Overview</span>
         </div>
         <span style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, fontFamily: "var(--font-dm-mono)" }}>Sep 2026</span>
@@ -133,11 +135,11 @@ function ProductUI() {
           ].map((kpi) => (
             <div
               key={kpi.label}
-              style={{ background: "#F5F7F5", borderRadius: 10, padding: "12px 14px" }}
+              style={{ background: "#F5F7FA", borderRadius: 10, padding: "12px 14px" }}
             >
               <p style={{ margin: "0 0 4px", fontSize: 10, color: "#64748B", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.06em" }}>{kpi.label}</p>
               <p style={{ margin: "0 0 4px", fontSize: 15, fontWeight: 700, color: "#0D2137" }}>{kpi.value}</p>
-              <p style={{ margin: 0, fontSize: 11, fontWeight: 600, color: kpi.up ? "#145F5A" : "#DC6B6B" }}>{kpi.delta}</p>
+              <p style={{ margin: 0, fontSize: 11, fontWeight: 600, color: kpi.up ? "#1D4ED8" : "#DC6B6B" }}>{kpi.delta}</p>
             </div>
           ))}
         </div>
@@ -148,8 +150,8 @@ function ProductUI() {
           <svg viewBox="0 0 432 72" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", height: 72 }}>
             <defs>
               <linearGradient id="revGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#4EC994" stopOpacity="0.25" />
-                <stop offset="100%" stopColor="#4EC994" stopOpacity="0" />
+                <stop offset="0%" stopColor="#2563EB" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#2563EB" stopOpacity="0" />
               </linearGradient>
             </defs>
             <path
@@ -160,7 +162,7 @@ function ProductUI() {
             {/* Drawn on, left to right */}
             <path
               d="M0 56 L36 50 L72 44 L108 40 L144 36 L180 30 L216 24 L252 20 L288 16 L324 10 L360 8 L396 4 L432 2"
-              stroke="#4EC994"
+              stroke="#2563EB"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -176,7 +178,7 @@ function ProductUI() {
                 cx={x}
                 cy={[50, 40, 30, 20, 10, 4][i]}
                 r="3"
-                fill="#4EC994"
+                fill="#2563EB"
                 stroke="#fff"
                 strokeWidth="1.5"
                 style={{
@@ -204,7 +206,7 @@ function ProductUI() {
                 alignItems: "center",
                 justifyContent: "space-between",
                 padding: "9px 0",
-                borderBottom: "1px solid #F0F3F1",
+                borderBottom: "1px solid #F1F5F9",
               }}
             >
               <div>
@@ -216,7 +218,7 @@ function ProductUI() {
                   fontSize: 13,
                   fontWeight: 700,
                   fontFamily: "var(--font-dm-mono)",
-                  color: tx.amount.startsWith("+") ? "#145F5A" : "#141E26",
+                  color: tx.amount.startsWith("+") ? "#1D4ED8" : "#141E26",
                 }}
               >
                 {tx.amount}
@@ -241,7 +243,7 @@ function FloatingChips() {
           right: "-18px",
           background: "#fff",
           borderRadius: 12,
-          border: "1px solid #E2E8E4",
+          border: "1px solid #E2E8F0",
           padding: "10px 16px",
           boxShadow: "0 8px 32px rgba(13,33,55,0.1)",
           display: "flex",
@@ -252,9 +254,9 @@ function FloatingChips() {
         }}
         className="float-chip ab-float"
       >
-        <div style={{ width: 32, height: 32, borderRadius: 8, background: "rgba(78,201,148,0.12)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: 32, height: 32, borderRadius: 8, background: "rgba(59,130,246,0.12)", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M8 2v3M8 11v3M2 8h3M11 8h3M4 4l2 2M10 10l2 2M4 12l2-2M10 6l2-2" stroke="#145F5A" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M8 2v3M8 11v3M2 8h3M11 8h3M4 4l2 2M10 10l2 2M4 12l2-2M10 6l2-2" stroke="#1D4ED8" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         </div>
         <div>
@@ -282,9 +284,9 @@ function FloatingChips() {
         }}
         className="float-chip ab-float-slow"
       >
-        <div style={{ width: 32, height: 32, borderRadius: 8, background: "rgba(78,201,148,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: 32, height: 32, borderRadius: 8, background: "rgba(59,130,246,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M3 8l3 3 7-7" stroke="#4EC994" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M3 8l3 3 7-7" stroke="#60A5FA" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
         <div>
@@ -299,7 +301,7 @@ function FloatingChips() {
 /* ─── Main page ─── */
 export default function Home() {
   return (
-    <div style={{ background: "#F5F7F5" }}>
+    <div style={{ background: "#F5F7FA" }}>
 
       {/* ─── Hero ─── */}
       <div style={{ position: "relative", overflow: "hidden" }}>
@@ -314,7 +316,7 @@ export default function Home() {
               width: 720,
               height: 720,
               borderRadius: "50%",
-              background: "radial-gradient(circle, rgba(78,201,148,0.16) 0%, transparent 68%)",
+              background: "radial-gradient(circle, rgba(59,130,246,0.16) 0%, transparent 68%)",
               filter: "blur(8px)",
             }}
           />
@@ -327,7 +329,7 @@ export default function Home() {
               width: 620,
               height: 620,
               borderRadius: "50%",
-              background: "radial-gradient(circle, rgba(20,95,90,0.10) 0%, transparent 68%)",
+              background: "radial-gradient(circle, rgba(29,78,216,0.10) 0%, transparent 68%)",
               filter: "blur(8px)",
               animationDelay: "-9s",
             }}
@@ -351,7 +353,7 @@ export default function Home() {
           <div>
             <div className="ab-enter">
               <Tag>
-                <span className="ab-pulse" style={{ width: 6, height: 6, borderRadius: "50%", background: "#4EC994", display: "inline-block" }} />
+                <span className="ab-pulse" style={{ width: 6, height: 6, borderRadius: "50%", background: "#2563EB", display: "inline-block" }} />
                 Smarter Finance
               </Tag>
             </div>
@@ -371,7 +373,7 @@ export default function Home() {
               Financial clarity,{" "}
               <span
                 style={{
-                  background: "linear-gradient(100deg, #145F5A 0%, #2E9B7A 55%, #4EC994 100%)",
+                  background: "linear-gradient(100deg, #1D4ED8 0%, #2563EB 55%, #3B82F6 100%)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   color: "transparent",
@@ -418,8 +420,8 @@ export default function Home() {
       {/* ─── Trust bar ─── */}
       <section
         style={{
-          borderTop: "1px solid #E2E8E4",
-          borderBottom: "1px solid #E2E8E4",
+          borderTop: "1px solid #E2E8F0",
+          borderBottom: "1px solid #E2E8F0",
           background: "#fff",
         }}
       >
@@ -437,7 +439,7 @@ export default function Home() {
           {[
             {
               icon: (
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#145F5A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#1D4ED8" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
               ),
               label: "Bank-grade security",
               sub: "Data encrypted at rest and in transit",
@@ -445,7 +447,7 @@ export default function Home() {
             {
               icon: (
                 <>
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#145F5A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#1D4ED8" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                 </>
               ),
               label: "Real-time automation",
@@ -453,14 +455,14 @@ export default function Home() {
             },
             {
               icon: (
-                <path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="#145F5A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                <path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="#1D4ED8" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
               ),
               label: "Accurate by design",
               sub: "Catch discrepancies before they compound",
             },
             {
               icon: (
-                <path d="M3 3h18v18H3zM3 9h18M9 21V9" stroke="#145F5A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                <path d="M3 3h18v18H3zM3 9h18M9 21V9" stroke="#1D4ED8" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
               ),
               label: "All in one place",
               sub: "Accounts, reports, and insights unified",
@@ -475,7 +477,7 @@ export default function Home() {
                   width: 40,
                   height: 40,
                   borderRadius: 10,
-                  background: "rgba(20,95,90,0.08)",
+                  background: "rgba(29,78,216,0.08)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -546,8 +548,8 @@ export default function Home() {
                 className="ab-row"
                 style={{
                   padding: "28px 0",
-                  borderTop: i === 0 ? "1px solid #E2E8E4" : "none",
-                  borderBottom: "1px solid #E2E8E4",
+                  borderTop: i === 0 ? "1px solid #E2E8F0" : "none",
+                  borderBottom: "1px solid #E2E8F0",
                   display: "flex",
                   gap: 24,
                 }}
@@ -558,7 +560,7 @@ export default function Home() {
                     fontFamily: "var(--font-dm-mono)",
                     fontSize: 12,
                     fontWeight: 400,
-                    color: "#CBD5D1",
+                    color: "#CBD5E1",
                     flexShrink: 0,
                     paddingTop: 3,
                     transition: "color 0.3s ease",
@@ -578,7 +580,7 @@ export default function Home() {
       </section>
 
       {/* ─── Solution ─── */}
-      <section style={{ background: "#0D2137", overflow: "hidden", position: "relative" }}>
+      <section style={{ background: "var(--grad-dark-band)", overflow: "hidden", position: "relative" }}>
         <div
           aria-hidden
           className="ab-drift"
@@ -589,7 +591,7 @@ export default function Home() {
             width: 680,
             height: 680,
             borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(78,201,148,0.09) 0%, transparent 68%)",
+            background: "radial-gradient(circle, rgba(59,130,246,0.09) 0%, transparent 68%)",
             pointerEvents: "none",
           }}
         />
@@ -652,9 +654,9 @@ export default function Home() {
               >
                 <span style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", textDecoration: "line-through" }}>{item.from}</span>
                 <svg className="ab-swap-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" style={{ transition: "transform 0.3s cubic-bezier(0.22,1,0.36,1)" }}>
-                  <path d="M4 10h12M12 6l4 4-4 4" stroke="#4EC994" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M4 10h12M12 6l4 4-4 4" stroke="#60A5FA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                <span style={{ fontSize: 13, fontWeight: 600, color: "#4EC994" }}>{item.to}</span>
+                <span style={{ fontSize: 13, fontWeight: 600, color: "#60A5FA" }}>{item.to}</span>
               </div>
               </Reveal>
             ))}
@@ -693,7 +695,7 @@ export default function Home() {
             alignItems: "center",
             marginBottom: 80,
             background: "#fff",
-            border: "1px solid #E2E8E4",
+            border: "1px solid #E2E8F0",
             borderRadius: 20,
             padding: "56px 64px",
             overflow: "hidden",
@@ -703,7 +705,7 @@ export default function Home() {
           {/* Visual */}
           <div
             style={{
-              background: "#F5F7F5",
+              background: "#F5F7FA",
               borderRadius: 14,
               padding: 28,
               display: "flex",
@@ -729,7 +731,7 @@ export default function Home() {
                   borderRadius: 8,
                   padding: "10px 14px",
                   border: "1px solid",
-                  borderColor: row.matched ? "#E2E8E4" : "rgba(220,107,107,0.3)",
+                  borderColor: row.matched ? "#E2E8F0" : "rgba(220,107,107,0.3)",
                   transitionDelay: `${i * 110}ms`,
                 }}
               >
@@ -738,8 +740,8 @@ export default function Home() {
                   style={{
                     fontSize: 11,
                     fontWeight: 700,
-                    color: row.matched ? "#145F5A" : "#DC6B6B",
-                    background: row.matched ? "rgba(78,201,148,0.1)" : "rgba(220,107,107,0.1)",
+                    color: row.matched ? "#1D4ED8" : "#DC6B6B",
+                    background: row.matched ? "rgba(59,130,246,0.1)" : "rgba(220,107,107,0.1)",
                     padding: "3px 8px",
                     borderRadius: 6,
                   }}
@@ -752,7 +754,7 @@ export default function Home() {
 
           {/* Text */}
           <div>
-            <span style={{ fontFamily: "var(--font-dm-mono)", fontSize: 12, color: "#CBD5D1" }}>01 — Automation</span>
+            <span style={{ fontFamily: "var(--font-dm-mono)", fontSize: 12, color: "#CBD5E1" }}>01 — Automation</span>
             <h3 style={{ margin: "12px 0 16px", fontSize: 30, fontWeight: 800, lineHeight: 1.15, letterSpacing: "-0.02em", color: "#0D2137" }}>
               Reconciliation that runs itself.
             </h3>
@@ -762,9 +764,9 @@ export default function Home() {
             <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
               {["Supports all major Australian banks", "Smart categorisation and matching rules", "Exception alerts in real time"].map((pt) => (
                 <li key={pt} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14, color: "#64748B" }}>
-                  <div style={{ width: 20, height: 20, borderRadius: 6, background: "rgba(78,201,148,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <div style={{ width: 20, height: 20, borderRadius: 6, background: "rgba(59,130,246,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                      <path d="M2 5l2 2 4-4" stroke="#145F5A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M2 5l2 2 4-4" stroke="#1D4ED8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                   {pt}
@@ -783,7 +785,7 @@ export default function Home() {
               title: "Reports in seconds, not hours.",
               body: "Generate P&L statements, balance sheets, cash flow reports, and custom dashboards with one click — always up to date.",
               visual: (
-                <div style={{ background: "#F5F7F5", borderRadius: 12, padding: 20 }}>
+                <div style={{ background: "#F5F7FA", borderRadius: 12, padding: 20 }}>
                   <p style={{ margin: "0 0 14px", fontSize: 11, fontWeight: 600, color: "#64748B", textTransform: "uppercase", letterSpacing: "0.08em" }}>P&L Summary</p>
                   {[
                     { label: "Gross Revenue", val: "$284,600", pct: 100 },
@@ -795,13 +797,13 @@ export default function Home() {
                         <span style={{ fontSize: 12, color: "#64748B" }}>{row.label}</span>
                         <span style={{ fontSize: 12, fontWeight: 700, color: "#0D2137", fontFamily: "var(--font-dm-mono)" }}>{row.val}</span>
                       </div>
-                      <div style={{ height: 4, background: "#E2E8E4", borderRadius: 2 }}>
+                      <div style={{ height: 4, background: "#E2E8F0", borderRadius: 2 }}>
                         <div
                           className="ab-bar"
                           style={{
                             height: "100%",
                             width: `${row.pct}%`,
-                            background: "#4EC994",
+                            background: "#2563EB",
                             borderRadius: 2,
                             animationDelay: `${i * 130}ms`,
                           }}
@@ -817,10 +819,10 @@ export default function Home() {
               title: "Know your financial position at a glance.",
               body: "Accountant Genie surfaces trends, anomalies, and opportunities across your accounts — giving your team actionable context, not just raw numbers.",
               visual: (
-                <div style={{ background: "#F5F7F5", borderRadius: 12, padding: 20 }}>
+                <div style={{ background: "#F5F7FA", borderRadius: 12, padding: 20 }}>
                   <p style={{ margin: "0 0 14px", fontSize: 11, fontWeight: 600, color: "#64748B", textTransform: "uppercase", letterSpacing: "0.08em" }}>Insights</p>
                   {[
-                    { label: "Cashflow positive", color: "#4EC994", icon: "↑" },
+                    { label: "Cashflow positive", color: "#2563EB", icon: "↑" },
                     { label: "3 invoices overdue", color: "#E8A73E", icon: "!" },
                     { label: "Tax provision due 28 Oct", color: "#64748B", icon: "◷" },
                   ].map((item) => (
@@ -834,7 +836,7 @@ export default function Home() {
                         borderRadius: 8,
                         padding: "10px 12px",
                         marginBottom: 8,
-                        border: "1px solid #E2E8E4",
+                        border: "1px solid #E2E8F0",
                       }}
                     >
                       <span
@@ -866,7 +868,7 @@ export default function Home() {
               style={{
                 height: "100%",
                 background: "#fff",
-                border: "1px solid #E2E8E4",
+                border: "1px solid #E2E8F0",
                 borderRadius: 20,
                 padding: "40px",
                 display: "flex",
@@ -876,7 +878,7 @@ export default function Home() {
             >
               {feat.visual}
               <div>
-                <span style={{ fontFamily: "var(--font-dm-mono)", fontSize: 12, color: "#CBD5D1" }}>{feat.num}</span>
+                <span style={{ fontFamily: "var(--font-dm-mono)", fontSize: 12, color: "#CBD5E1" }}>{feat.num}</span>
                 <h3 style={{ margin: "10px 0 10px", fontSize: 22, fontWeight: 800, lineHeight: 1.2, letterSpacing: "-0.02em", color: "#0D2137" }}>{feat.title}</h3>
                 <p style={{ margin: 0, fontSize: 15, color: "#64748B", lineHeight: 1.65 }}>{feat.body}</p>
               </div>
@@ -891,7 +893,7 @@ export default function Home() {
       </section>
 
       {/* ─── How it works ─── */}
-      <section style={{ background: "#fff", borderTop: "1px solid #E2E8E4", borderBottom: "1px solid #E2E8E4" }}>
+      <section style={{ background: "#fff", borderTop: "1px solid #E2E8F0", borderBottom: "1px solid #E2E8F0" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "112px 32px" }}>
           <Reveal style={{ textAlign: "center", maxWidth: 520, margin: "0 auto 72px" }}>
             <Tag>How it works</Tag>
@@ -926,7 +928,7 @@ export default function Home() {
                 left: "calc(16.67% + 32px)",
                 right: "calc(16.67% + 32px)",
                 height: 1,
-                background: "linear-gradient(to right, #4EC994, #145F5A, #4EC994)",
+                background: "linear-gradient(to right, #3B82F6, #1D4ED8, #3B82F6)",
                 opacity: 0.3,
               }}
               className="step-connector"
@@ -1014,7 +1016,7 @@ export default function Home() {
           {[
             {
               icon: (
-                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="#4EC994" strokeWidth="1.8" strokeLinecap="round" />
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="#2563EB" strokeWidth="1.8" strokeLinecap="round" />
               ),
               headline: "Faster close",
               body: "Month-end and year-end processes that used to take days now take hours — with fewer errors and less stress.",
@@ -1022,8 +1024,8 @@ export default function Home() {
             {
               icon: (
                 <>
-                  <circle cx="12" cy="12" r="10" stroke="#4EC994" strokeWidth="1.8" fill="none" />
-                  <path d="M12 6v6l4 2" stroke="#4EC994" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="12" cy="12" r="10" stroke="#2563EB" strokeWidth="1.8" fill="none" />
+                  <path d="M12 6v6l4 2" stroke="#2563EB" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                 </>
               ),
               headline: "Time back for what matters",
@@ -1031,7 +1033,7 @@ export default function Home() {
             },
             {
               icon: (
-                <path d="M2 20h20M6 20V10l6-6 6 6v10M10 20v-5h4v5" stroke="#4EC994" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                <path d="M2 20h20M6 20V10l6-6 6 6v10M10 20v-5h4v5" stroke="#2563EB" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
               ),
               headline: "Confidence in your numbers",
               body: "Decisions are only as good as the data behind them. Accountant Genie gives you a single source of financial truth, always current.",
@@ -1042,7 +1044,7 @@ export default function Home() {
               style={{
                 height: "100%",
                 background: "#fff",
-                border: "1px solid #E2E8E4",
+                border: "1px solid #E2E8F0",
                 borderRadius: 16,
                 padding: "40px",
               }}
@@ -1052,7 +1054,7 @@ export default function Home() {
                   width: 48,
                   height: 48,
                   borderRadius: 12,
-                  background: "rgba(20,95,90,0.08)",
+                  background: "rgba(29,78,216,0.08)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -1070,7 +1072,7 @@ export default function Home() {
       </section>
 
       {/* ─── Final CTA ─── */}
-      <section style={{ background: "#0D2137", position: "relative", overflow: "hidden" }}>
+      <section style={{ background: "var(--grad-dark-band)", position: "relative", overflow: "hidden" }}>
         {/* Decorative */}
         <div
           aria-hidden
@@ -1078,7 +1080,7 @@ export default function Home() {
           style={{
             position: "absolute",
             inset: "-20%",
-            backgroundImage: "radial-gradient(ellipse 45% 55% at 78% 50%, rgba(78,201,148,0.12) 0%, transparent 70%)",
+            backgroundImage: "radial-gradient(ellipse 45% 55% at 78% 50%, rgba(59,130,246,0.12) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -1117,21 +1119,21 @@ export default function Home() {
                 fontFamily: "var(--font-jakarta)",
                 fontWeight: 600,
                 fontSize: 15,
-                color: "#0D2137",
+                color: "#fff",
                 textDecoration: "none",
                 padding: "14px 28px",
                 borderRadius: 10,
-                background: "#4EC994",
+                background: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
                 transition: "background 0.2s ease, transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease",
               }}
               className="ab-sweep"
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#3db882";
+                e.currentTarget.style.background = "linear-gradient(135deg, #2563EB 0%, #1E3A8A 100%)";
                 e.currentTarget.style.transform = "translateY(-2px)";
-                e.currentTarget.style.boxShadow = "0 12px 32px rgba(78,201,148,0.28)";
+                e.currentTarget.style.boxShadow = "0 12px 32px rgba(59,130,246,0.28)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = "#4EC994";
+                e.currentTarget.style.background = "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)";
                 e.currentTarget.style.transform = "none";
                 e.currentTarget.style.boxShadow = "none";
               }}

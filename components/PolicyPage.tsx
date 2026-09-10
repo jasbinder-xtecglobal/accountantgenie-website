@@ -11,11 +11,11 @@ import { CONTACT_EMAIL, policies, type Block, type Policy, type Term } from "@/l
    ────────────────────────────────────────────── */
 
 const NAVY = "#0D2137";
-const TEAL = "#145F5A";
-const MINT = "#4EC994";
+const TEAL = "#1D4ED8";
+const MINT = "#2563EB";
 const TEXT = "#3F4C5A";
 const MUTED = "#64748B";
-const LINE = "#E2E8E4";
+const LINE = "#E2E8F0";
 
 function isTerms(b: Block): b is { terms: Term[] } {
   return typeof b === "object" && !Array.isArray(b) && "terms" in b;
@@ -95,7 +95,7 @@ function TermCard({ t }: { t: Term }) {
           width: 34,
           height: 34,
           borderRadius: 9,
-          background: "rgba(78,201,148,0.14)",
+          background: "rgba(59,130,246,0.14)",
           color: TEAL,
           display: "flex",
           alignItems: "center",
@@ -135,14 +135,14 @@ function DocIllustration({ Icon }: { Icon: React.ComponentType<{ size?: number; 
           position: "absolute",
           inset: -30,
           borderRadius: "50%",
-          background: "radial-gradient(circle at 60% 55%, rgba(78,201,148,0.22) 0%, rgba(78,201,148,0) 68%)",
+          background: "radial-gradient(circle at 60% 55%, rgba(59,130,246,0.22) 0%, rgba(59,130,246,0) 68%)",
         }}
       />
-      <div style={{ ...sheet, left: 30, top: 18, transform: "rotate(-7deg)", background: "#E9F6EF", border: "1px solid #D4F5E5", boxShadow: "none" }} />
+      <div style={{ ...sheet, left: 30, top: 18, transform: "rotate(-7deg)", background: "#EFF6FF", border: "1px solid #DBEAFE", boxShadow: "none" }} />
       <div style={{ ...sheet, left: 52, top: 8 }}>
         <div style={{ padding: "20px 16px", display: "flex", flexDirection: "column", gap: 10 }}>
           {lines.map((w, i) => (
-            <span key={i} style={{ display: "block", width: w, height: 6, borderRadius: 3, background: i === 0 ? "#BFEBD6" : "#E6ECE8" }} />
+            <span key={i} style={{ display: "block", width: w, height: 6, borderRadius: 3, background: i === 0 ? "#BFDBFE" : "#E8EDF4" }} />
           ))}
         </div>
       </div>
@@ -154,12 +154,12 @@ function DocIllustration({ Icon }: { Icon: React.ComponentType<{ size?: number; 
           width: 50,
           height: 50,
           borderRadius: 13,
-          background: "linear-gradient(160deg, #1B7A6E 0%, #145F5A 100%)",
+          background: "linear-gradient(160deg, #1E40AF 0%, #1D4ED8 100%)",
           color: "#fff",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          boxShadow: "0 10px 24px rgba(20,95,90,0.35), 0 0 0 4px #fff",
+          boxShadow: "0 10px 24px rgba(29,78,216,0.35), 0 0 0 4px #fff",
         }}
       >
         <Icon size={22} strokeWidth={2} />
@@ -207,7 +207,7 @@ export default function PolicyPage({ policy }: { policy: Policy }) {
   };
 
   return (
-    <div style={{ background: "#F5F7F5", minHeight: "60vh" }}>
+    <div style={{ background: "#F5F7FA", minHeight: "60vh" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "28px 24px 80px" }}>
         <div
           className="pp-layout"
@@ -229,7 +229,7 @@ export default function PolicyPage({ policy }: { policy: Policy }) {
                       width: 40,
                       height: 40,
                       borderRadius: 11,
-                      background: "rgba(78,201,148,0.14)",
+                      background: "rgba(59,130,246,0.14)",
                       color: TEAL,
                       display: "flex",
                       alignItems: "center",
@@ -256,7 +256,7 @@ export default function PolicyPage({ policy }: { policy: Policy }) {
                       gap: 8,
                       padding: "9px 12px",
                       borderRadius: 10,
-                      background: "#F1F4F2",
+                      background: "#F1F5F9",
                       marginBottom: 10,
                     }}
                   >
@@ -298,12 +298,12 @@ export default function PolicyPage({ policy }: { policy: Policy }) {
                               fontSize: 14,
                               fontWeight: isActive ? 700 : 500,
                               color: NAVY,
-                              background: isActive ? "rgba(78,201,148,0.16)" : "transparent",
+                              background: isActive ? "rgba(59,130,246,0.16)" : "transparent",
                               textDecoration: "none",
                               transition: "background 0.15s ease",
                             }}
                             onMouseEnter={(e) => {
-                              if (!isActive) e.currentTarget.style.background = "#F1F4F2";
+                              if (!isActive) e.currentTarget.style.background = "#F1F5F9";
                             }}
                             onMouseLeave={(e) => {
                               if (!isActive) e.currentTarget.style.background = "transparent";
@@ -321,14 +321,14 @@ export default function PolicyPage({ policy }: { policy: Policy }) {
                                 fontSize: 11,
                                 fontWeight: 700,
                                 letterSpacing: "0.02em",
-                                background: isActive ? "#3DB882" : "#E9EEEB",
+                                background: isActive ? "#1E40AF" : "#E9EEF5",
                                 color: isActive ? "#fff" : NAVY,
                               }}
                             >
                               {String(i + 1).padStart(2, "0")}
                             </span>
                             <span style={{ flex: 1, minWidth: 0 }}>{s.title}</span>
-                            <ChevronRight size={15} strokeWidth={2} color={isActive ? "#3DB882" : "#94A3B0"} aria-hidden />
+                            <ChevronRight size={15} strokeWidth={2} color={isActive ? "#1E40AF" : "#94A3B0"} aria-hidden />
                           </a>
                         </li>
                       );
@@ -338,7 +338,7 @@ export default function PolicyPage({ policy }: { policy: Policy }) {
               </div>
 
               {/* Need a hand */}
-              <div style={{ ...card, background: "#EEF8F3", border: "1px solid #D4F5E5", padding: "18px 18px 16px" }}>
+              <div style={{ ...card, background: "#EFF6FF", border: "1px solid #DBEAFE", padding: "18px 18px 16px" }}>
                 <span
                   aria-hidden
                   style={{
@@ -348,7 +348,7 @@ export default function PolicyPage({ policy }: { policy: Policy }) {
                     width: 34,
                     height: 34,
                     borderRadius: 9,
-                    background: "rgba(78,201,148,0.22)",
+                    background: "rgba(59,130,246,0.22)",
                     color: TEAL,
                     marginBottom: 12,
                   }}
@@ -376,7 +376,7 @@ export default function PolicyPage({ policy }: { policy: Policy }) {
                       borderRadius: 9,
                       transition: "background 0.15s ease",
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.background = "#0F4C48")}
+                    onMouseEnter={(e) => (e.currentTarget.style.background = "#1E3A8A")}
                     onMouseLeave={(e) => (e.currentTarget.style.background = TEAL)}
                   >
                     <Mail size={14} strokeWidth={2.2} aria-hidden />
@@ -426,7 +426,7 @@ export default function PolicyPage({ policy }: { policy: Policy }) {
                   <ArrowLeft size={12} strokeWidth={2.2} aria-hidden />
                   All policies
                 </Link>
-                <ChevronRight size={12} color="#CBD5D1" aria-hidden />
+                <ChevronRight size={12} color="#CBD5E1" aria-hidden />
                 <span style={{ color: NAVY, fontWeight: 600 }}>{title}</span>
                 <span style={{ marginLeft: "auto", display: "inline-flex", alignItems: "center", gap: 6, color: MUTED }}>
                   <Clock size={12} strokeWidth={2} color={MINT} aria-hidden />

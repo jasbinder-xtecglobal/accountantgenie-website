@@ -4,10 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin, Sparkles } from "lucide-react";
 
-const MUTED = "rgba(255,255,255,0.55)";
-const MUTED_STRONG = "rgba(255,255,255,0.8)";
-const FAINT = "rgba(255,255,255,0.32)";
-const LINE = "rgba(255,255,255,0.08)";
+const MUTED = "rgba(255,255,255,0.86)";
+const MUTED_STRONG = "rgba(255,255,255,0.96)";
+const FAINT = "rgba(255,255,255,0.62)";
+const LINE = "rgba(255,255,255,0.12)";
 
 type FooterLink = { href: string; label: string };
 
@@ -88,9 +88,9 @@ function SocialIcon({ href, label, children }: { href: string; label: string; ch
         transition: "background 0.15s ease, border-color 0.15s ease, color 0.15s ease",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.background = "rgba(78,201,148,0.14)";
-        e.currentTarget.style.borderColor = "rgba(78,201,148,0.4)";
-        e.currentTarget.style.color = "#4EC994";
+        e.currentTarget.style.background = "rgba(59,130,246,0.14)";
+        e.currentTarget.style.borderColor = "rgba(59,130,246,0.4)";
+        e.currentTarget.style.color = "#60A5FA";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.background = "rgba(255,255,255,0.06)";
@@ -108,7 +108,7 @@ const iconWrap: React.CSSProperties = {
   width: 28,
   height: 28,
   borderRadius: 8,
-  background: "rgba(78,201,148,0.12)",
+  background: "rgba(59,130,246,0.12)",
   alignItems: "center",
   justifyContent: "center",
   flexShrink: 0,
@@ -119,7 +119,7 @@ export default function Footer() {
     <footer
       style={{
         position: "relative",
-        background: "#0D2137",
+        background: "var(--grad-footer)",
         color: "#fff",
         overflow: "hidden",
         fontFamily: "var(--font-jakarta)",
@@ -133,8 +133,9 @@ export default function Footer() {
           top: 0,
           left: 0,
           right: 0,
-          height: 2,
-          background: "linear-gradient(90deg, #145F5A 0%, #4EC994 50%, rgba(78,201,148,0) 100%)",
+          height: 1,
+          background:
+            "linear-gradient(90deg, rgba(59,130,246,0) 0%, rgba(96,165,250,0.55) 50%, rgba(59,130,246,0) 100%)",
         }}
       />
       {/* Ambient glow */}
@@ -147,7 +148,7 @@ export default function Footer() {
           width: 900,
           height: 420,
           transform: "translateX(-50%)",
-          background: "radial-gradient(ellipse at center, rgba(78,201,148,0.14) 0%, rgba(78,201,148,0) 65%)",
+          background: "radial-gradient(ellipse at center, rgba(59,130,246,0.14) 0%, rgba(59,130,246,0) 65%)",
           pointerEvents: "none",
         }}
       />
@@ -163,8 +164,8 @@ export default function Footer() {
             gap: 32,
             padding: "36px 40px",
             borderRadius: 20,
-            background: "linear-gradient(135deg, rgba(20,95,90,0.55) 0%, rgba(13,33,55,0.4) 100%)",
-            border: "1px solid rgba(78,201,148,0.22)",
+            background: "linear-gradient(135deg, rgba(37,99,235,0.42) 0%, rgba(13,33,55,0.55) 100%)",
+            border: "1px solid rgba(59,130,246,0.22)",
             boxShadow: "0 20px 60px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.06)",
             marginBottom: 64,
           }}
@@ -177,7 +178,7 @@ export default function Footer() {
                 fontWeight: 600,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                color: "#4EC994",
+                color: "#60A5FA",
               }}
             >
               Ready when you are
@@ -195,20 +196,20 @@ export default function Footer() {
               style={{
                 fontWeight: 600,
                 fontSize: 14,
-                color: "#0D2137",
+                color: "#fff",
                 textDecoration: "none",
                 padding: "12px 22px",
                 borderRadius: 10,
-                background: "#4EC994",
-                boxShadow: "0 8px 24px rgba(78,201,148,0.28)",
+                background: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
+                boxShadow: "0 8px 24px rgba(59,130,246,0.28)",
                 transition: "background 0.15s ease, transform 0.15s ease",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#3db882";
+                e.currentTarget.style.background = "linear-gradient(135deg, #2563EB 0%, #1E3A8A 100%)";
                 e.currentTarget.style.transform = "translateY(-1px)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = "#4EC994";
+                e.currentTarget.style.background = "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)";
                 e.currentTarget.style.transform = "none";
               }}
             >
@@ -276,17 +277,17 @@ export default function Footer() {
               <a
                 href="mailto:hello@accountantgenie.com.au"
                 style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: 14, color: MUTED_STRONG, textDecoration: "none" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#4EC994")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#60A5FA")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = MUTED_STRONG)}
               >
                 <span style={iconWrap}>
-                  <Mail size={14} strokeWidth={2} color="#4EC994" aria-hidden />
+                  <Mail size={14} strokeWidth={2} color="#60A5FA" aria-hidden />
                 </span>
                 hello@accountantgenie.com.au
               </a>
               <span style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: 14, color: MUTED_STRONG }}>
                 <span style={iconWrap}>
-                  <MapPin size={14} strokeWidth={2} color="#4EC994" aria-hidden />
+                  <MapPin size={14} strokeWidth={2} color="#60A5FA" aria-hidden />
                 </span>
                 Sydney, New South Wales, Australia
               </span>
@@ -352,8 +353,8 @@ export default function Footer() {
                 letterSpacing: "0.01em",
               }}
             >
-              <Sparkles size={12} strokeWidth={2.2} color="#4EC994" aria-hidden />
-              Powered by <span style={{ color: "#4EC994", fontWeight: 600 }}>Sparkview</span>
+              <Sparkles size={12} strokeWidth={2.2} color="#60A5FA" aria-hidden />
+              Powered by <span style={{ color: "#60A5FA", fontWeight: 600 }}>Sparkview</span>
             </span>
           </div>
 

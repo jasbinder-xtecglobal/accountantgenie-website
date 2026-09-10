@@ -20,9 +20,9 @@ function Tag({ children }: { children: React.ReactNode }) {
         fontWeight: 700,
         letterSpacing: "0.1em",
         textTransform: "uppercase",
-        color: "#4EC994",
-        background: "rgba(78,201,148,0.12)",
-        border: "1px solid rgba(78,201,148,0.25)",
+        color: "#60A5FA",
+        background: "rgba(59,130,246,0.12)",
+        border: "1px solid rgba(59,130,246,0.25)",
         padding: "5px 12px",
         borderRadius: 100,
       }}
@@ -65,12 +65,12 @@ function PageButton({
         fontSize: 14,
         fontWeight: 600,
         background: active ? "#0D2137" : "transparent",
-        color: active ? "#fff" : disabled ? "#CBD5D1" : "#0D2137",
+        color: active ? "#fff" : disabled ? "#CBD5E1" : "#0D2137",
         boxShadow: active ? "0 6px 18px rgba(13,33,55,0.25)" : "none",
         transition: "background 0.15s ease, color 0.15s ease, transform 0.15s ease",
       }}
       onMouseEnter={(e) => {
-        if (!disabled && !active) e.currentTarget.style.background = "rgba(78,201,148,0.14)";
+        if (!disabled && !active) e.currentTarget.style.background = "rgba(59,130,246,0.14)";
       }}
       onMouseLeave={(e) => {
         if (!active) e.currentTarget.style.background = "transparent";
@@ -97,11 +97,11 @@ export default function Policies() {
   };
 
   return (
-    <div style={{ background: "#F5F7F5" }}>
+    <div style={{ background: "#F5F7FA" }}>
       {/* Hero */}
       <section
         style={{
-          background: "#0D2137",
+          background: "var(--grad-dark-band)",
           padding: "104px 32px 88px",
           textAlign: "center",
           position: "relative",
@@ -114,7 +114,7 @@ export default function Policies() {
           style={{
             position: "absolute",
             inset: "-25%",
-            backgroundImage: "radial-gradient(ellipse 40% 50% at 50% 45%, rgba(78,201,148,0.12) 0%, transparent 70%)",
+            backgroundImage: "radial-gradient(ellipse 40% 50% at 50% 45%, rgba(59,130,246,0.12) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -164,7 +164,7 @@ export default function Policies() {
                   padding: "30px 30px 26px",
                   borderRadius: 18,
                   background: "#fff",
-                  border: "1px solid #E2E8E4",
+                  border: "1px solid #E2E8F0",
                   textDecoration: "none",
                   boxShadow: "0 1px 2px rgba(13,33,55,0.04)",
                   transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
@@ -179,8 +179,8 @@ export default function Policies() {
                       width: 40,
                       height: 40,
                       borderRadius: 11,
-                      background: "rgba(78,201,148,0.12)",
-                      color: "#145F5A",
+                      background: "rgba(59,130,246,0.12)",
+                      color: "#1D4ED8",
                     }}
                   >
                     <Icon size={19} strokeWidth={1.9} aria-hidden />
@@ -221,7 +221,7 @@ export default function Policies() {
                     gap: 6,
                     fontSize: 14,
                     fontWeight: 600,
-                    color: "#145F5A",
+                    color: "#1D4ED8",
                   }}
                 >
                   Read policy
@@ -246,7 +246,7 @@ export default function Policies() {
                 padding: 6,
                 borderRadius: 999,
                 background: "#fff",
-                border: "1px solid #E2E8E4",
+                border: "1px solid #E2E8F0",
                 boxShadow: "0 1px 2px rgba(13,33,55,0.04), 0 8px 24px rgba(13,33,55,0.05)",
               }}
             >
@@ -272,11 +272,11 @@ export default function Policies() {
       <style>{`
         .policy-card:hover {
           transform: translateY(-3px);
-          border-color: rgba(78,201,148,0.5) !important;
+          border-color: rgba(59,130,246,0.5) !important;
           box-shadow: 0 1px 2px rgba(13,33,55,0.04), 0 16px 40px rgba(13,33,55,0.08) !important;
         }
         .policy-card:hover .policy-arrow { transform: translateX(3px); }
-        .policy-card:focus-visible { outline: 2px solid #4EC994; outline-offset: 3px; }
+        .policy-card:focus-visible { outline: 2px solid #2563EB; outline-offset: 3px; }
         @media (max-width: 1024px) {
           .policies-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
         }

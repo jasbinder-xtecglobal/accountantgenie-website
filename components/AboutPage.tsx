@@ -16,9 +16,9 @@ function Tag({ children, tone = "light" }: { children: React.ReactNode; tone?: "
         fontWeight: 700,
         letterSpacing: "0.1em",
         textTransform: "uppercase",
-        color: onDark ? "#4EC994" : "#145F5A",
-        background: onDark ? "rgba(78,201,148,0.14)" : "rgba(78,201,148,0.12)",
-        border: `1px solid rgba(78,201,148,${onDark ? 0.38 : 0.25})`,
+        color: onDark ? "#60A5FA" : "#1D4ED8",
+        background: onDark ? "rgba(59,130,246,0.14)" : "rgba(59,130,246,0.12)",
+        border: `1px solid rgba(59,130,246,${onDark ? 0.38 : 0.25})`,
         padding: "5px 12px",
         borderRadius: 100,
       }}
@@ -30,12 +30,12 @@ function Tag({ children, tone = "light" }: { children: React.ReactNode; tone?: "
 
 export default function About() {
   return (
-    <div style={{ background: "#F5F7F5" }}>
+    <div style={{ background: "#F5F7FA" }}>
 
       {/* Hero */}
       <section
         style={{
-          background: "#0D2137",
+          background: "var(--grad-dark-band)",
           padding: "120px 32px 112px",
           textAlign: "center",
           position: "relative",
@@ -48,7 +48,7 @@ export default function About() {
           style={{
             position: "absolute",
             inset: "-25%",
-            backgroundImage: "radial-gradient(ellipse 40% 50% at 50% 45%, rgba(78,201,148,0.12) 0%, transparent 70%)",
+            backgroundImage: "radial-gradient(ellipse 40% 50% at 50% 45%, rgba(59,130,246,0.12) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -120,7 +120,7 @@ export default function About() {
                   gap: 24,
                   alignItems: "flex-start",
                   paddingBottom: i < 3 ? 24 : 0,
-                  borderBottom: i < 3 ? "1px solid #E2E8E4" : "none",
+                  borderBottom: i < 3 ? "1px solid #E2E8F0" : "none",
                 }}
               >
                 <span
@@ -128,7 +128,7 @@ export default function About() {
                     fontFamily: "var(--font-dm-mono)",
                     fontSize: 13,
                     fontWeight: 400,
-                    color: "#4EC994",
+                    color: "#2563EB",
                     minWidth: 40,
                     paddingTop: 2,
                   }}
@@ -147,8 +147,8 @@ export default function About() {
       <section
         style={{
           background: "#fff",
-          borderTop: "1px solid #E2E8E4",
-          borderBottom: "1px solid #E2E8E4",
+          borderTop: "1px solid #E2E8F0",
+          borderBottom: "1px solid #E2E8F0",
         }}
       >
         <Reveal
@@ -231,7 +231,7 @@ export default function About() {
               style={{
                 height: "100%",
                 background: "#fff",
-                border: "1px solid #E2E8E4",
+                border: "1px solid #E2E8F0",
                 borderRadius: 16,
                 padding: "40px 44px",
                 display: "flex",
@@ -242,7 +242,7 @@ export default function About() {
                 style={{
                   fontFamily: "var(--font-dm-mono)",
                   fontSize: 12,
-                  color: "#CBD5D1",
+                  color: "#CBD5E1",
                   flexShrink: 0,
                   paddingTop: 4,
                 }}
@@ -262,7 +262,7 @@ export default function About() {
       {/* CTA */}
       <section
         style={{
-          background: "#0D2137",
+          background: "var(--grad-dark-band)",
           textAlign: "center",
           padding: "112px 32px",
           position: "relative",
@@ -275,7 +275,7 @@ export default function About() {
           style={{
             position: "absolute",
             inset: "-25%",
-            backgroundImage: "radial-gradient(ellipse 45% 55% at 22% 50%, rgba(78,201,148,0.11) 0%, transparent 70%)",
+            backgroundImage: "radial-gradient(ellipse 45% 55% at 22% 50%, rgba(59,130,246,0.11) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -294,15 +294,15 @@ export default function About() {
               fontFamily: "var(--font-jakarta)",
               fontWeight: 600,
               fontSize: 15,
-              color: "#0D2137",
+              color: "#fff",
               textDecoration: "none",
               padding: "14px 28px",
               borderRadius: 10,
-              background: "#4EC994",
+              background: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
               transition: "background 0.2s ease",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#3db882")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "#4EC994")}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #2563EB 0%, #1E3A8A 100%)")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)")}
           >
             Book a Demo
           </Link>

@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Reveal from "./Reveal";
 
-function Tag({ children }: { children: React.ReactNode }) {
+function Tag({ children, tone = "light" }: { children: React.ReactNode; tone?: "light" | "dark" }) {
+  const onDark = tone === "dark";
   return (
     <span
       style={{
@@ -14,9 +15,9 @@ function Tag({ children }: { children: React.ReactNode }) {
         fontWeight: 700,
         letterSpacing: "0.1em",
         textTransform: "uppercase",
-        color: "#145F5A",
-        background: "rgba(78,201,148,0.12)",
-        border: "1px solid rgba(78,201,148,0.25)",
+        color: onDark ? "#60A5FA" : "#1D4ED8",
+        background: onDark ? "rgba(59,130,246,0.14)" : "rgba(59,130,246,0.12)",
+        border: `1px solid rgba(59,130,246,${onDark ? 0.38 : 0.25})`,
         padding: "5px 12px",
         borderRadius: 100,
       }}
@@ -52,7 +53,7 @@ function Field({
     fontSize: 15,
     color: "#141E26",
     background: "#fff",
-    border: `1.5px solid ${focus ? "#0D2137" : "#E2E8E4"}`,
+    border: `1.5px solid ${focus ? "#0D2137" : "#E2E8F0"}`,
     borderRadius: 10,
     padding: textarea ? "14px 16px" : "13px 16px",
     outline: "none",
@@ -72,7 +73,7 @@ function Field({
           marginBottom: 8,
         }}
       >
-        {label} {required && <span style={{ color: "#4EC994" }}>*</span>}
+        {label} {required && <span style={{ color: "#2563EB" }}>*</span>}
       </label>
       {textarea ? (
         <textarea
@@ -116,12 +117,30 @@ export default function Contact() {
   };
 
   return (
-    <div style={{ background: "#F5F7F5" }}>
+    <div style={{ background: "#F5F7FA" }}>
 
       {/* Hero */}
-      <section style={{ background: "#fff", borderBottom: "1px solid #E2E8E4", padding: "80px 32px 72px", textAlign: "center" }}>
-        <div className="ab-enter" style={{ maxWidth: 560, margin: "0 auto" }}>
-          <Tag>Get in touch</Tag>
+      <section
+        style={{
+          background: "var(--grad-dark-band)",
+          padding: "80px 32px 72px",
+          textAlign: "center",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          aria-hidden
+          className="ab-drift"
+          style={{
+            position: "absolute",
+            inset: "-25%",
+            backgroundImage: "radial-gradient(ellipse 40% 50% at 50% 45%, rgba(59,130,246,0.12) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+        <div className="ab-enter" style={{ position: "relative", maxWidth: 560, margin: "0 auto" }}>
+          <Tag tone="dark">Get in touch</Tag>
           <h1
             style={{
               margin: "24px 0 16px",
@@ -129,12 +148,12 @@ export default function Contact() {
               fontWeight: 800,
               lineHeight: 1.08,
               letterSpacing: "-0.03em",
-              color: "#0D2137",
+              color: "#fff",
             }}
           >
             Let&#39;s talk.
           </h1>
-          <p style={{ fontSize: 18, color: "#64748B", lineHeight: 1.7, margin: 0 }}>
+          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, margin: 0 }}>
             Have questions about Accountant Genie? Want to see a live demo? We&#39;d love to hear from you.
           </p>
         </div>
@@ -164,14 +183,14 @@ export default function Contact() {
               {[
                 {
                   icon: (
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#145F5A" strokeWidth="1.8" fill="none" strokeLinejoin="round" />
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#1D4ED8" strokeWidth="1.8" fill="none" strokeLinejoin="round" />
                   ),
                   label: "Email",
                   value: "hello@accountantgenie.com.au",
                 },
                 {
                   icon: (
-                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z M12 10m-3 0a3 3 0 1 0 6 0 3 3 0 0 0-6 0" stroke="#145F5A" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z M12 10m-3 0a3 3 0 1 0 6 0 3 3 0 0 0-6 0" stroke="#1D4ED8" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                   ),
                   label: "Location",
                   value: "Sydney, New South Wales, Australia",
@@ -183,7 +202,7 @@ export default function Contact() {
                       width: 44,
                       height: 44,
                       borderRadius: 11,
-                      background: "rgba(20,95,90,0.08)",
+                      background: "rgba(29,78,216,0.08)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -222,15 +241,15 @@ export default function Contact() {
                   fontFamily: "var(--font-jakarta)",
                   fontWeight: 600,
                   fontSize: 14,
-                  color: "#0D2137",
+                  color: "#fff",
                   textDecoration: "none",
                   padding: "11px 20px",
                   borderRadius: 8,
-                  background: "#4EC994",
+                  background: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
                   transition: "background 0.15s ease",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "#3db882")}
-                onMouseLeave={(e) => (e.currentTarget.style.background = "#4EC994")}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #2563EB 0%, #1E3A8A 100%)")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)")}
               >
                 Book a Demo
               </a>
@@ -243,7 +262,7 @@ export default function Contact() {
               className="ab-enter"
               style={{
                 background: "#fff",
-                border: "1px solid #E2E8E4",
+                border: "1px solid #E2E8F0",
                 borderRadius: 20,
                 padding: "56px 48px",
                 textAlign: "center",
@@ -254,7 +273,7 @@ export default function Contact() {
                   width: 64,
                   height: 64,
                   borderRadius: 16,
-                  background: "rgba(78,201,148,0.12)",
+                  background: "rgba(59,130,246,0.12)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -264,7 +283,7 @@ export default function Contact() {
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
                   <path
                     d="M6 14l5 5 11-11"
-                    stroke="#145F5A"
+                    stroke="#1D4ED8"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -287,7 +306,7 @@ export default function Contact() {
               onSubmit={handleSubmit}
               style={{
                 background: "#fff",
-                border: "1px solid #E2E8E4",
+                border: "1px solid #E2E8F0",
                 borderRadius: 20,
                 padding: "48px",
                 display: "flex",
@@ -317,7 +336,7 @@ export default function Contact() {
                   transition: "background 0.2s ease",
                   marginTop: 4,
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "#145F5A")}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "#1D4ED8")}
                 onMouseLeave={(e) => (e.currentTarget.style.background = "#0D2137")}
               >
                 Send Message

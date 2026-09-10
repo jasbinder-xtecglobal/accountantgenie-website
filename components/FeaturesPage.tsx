@@ -3,7 +3,8 @@
 import Link from "next/link";
 import Reveal from "./Reveal";
 
-function Tag({ children }: { children: React.ReactNode }) {
+function Tag({ children, tone = "light" }: { children: React.ReactNode; tone?: "light" | "dark" }) {
+  const onDark = tone === "dark";
   return (
     <span
       style={{
@@ -14,9 +15,9 @@ function Tag({ children }: { children: React.ReactNode }) {
         fontWeight: 700,
         letterSpacing: "0.1em",
         textTransform: "uppercase",
-        color: "#145F5A",
-        background: "rgba(78,201,148,0.12)",
-        border: "1px solid rgba(78,201,148,0.25)",
+        color: onDark ? "#60A5FA" : "#1D4ED8",
+        background: onDark ? "rgba(59,130,246,0.14)" : "rgba(59,130,246,0.12)",
+        border: `1px solid rgba(59,130,246,${onDark ? 0.38 : 0.25})`,
         padding: "5px 12px",
         borderRadius: 100,
       }}
@@ -39,10 +40,10 @@ const features = [
       "Full audit trail for every reconciliation decision",
     ],
     visual: (
-      <div style={{ background: "#F5F7F5", borderRadius: 14, padding: 24 }}>
+      <div style={{ background: "#F5F7FA", borderRadius: 14, padding: 24 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
           <p style={{ margin: 0, fontSize: 13, fontWeight: 700, color: "#0D2137" }}>Bank Reconciliation</p>
-          <span style={{ fontSize: 11, fontWeight: 600, color: "#145F5A", background: "rgba(78,201,148,0.12)", padding: "3px 8px", borderRadius: 6 }}>92% matched</span>
+          <span style={{ fontSize: 11, fontWeight: 600, color: "#1D4ED8", background: "rgba(59,130,246,0.12)", padding: "3px 8px", borderRadius: 6 }}>92% matched</span>
         </div>
         {[
           { desc: "Westpac — ATO Quarterly", match: true },
@@ -61,11 +62,11 @@ const features = [
               borderRadius: 8,
               padding: "9px 12px",
               marginBottom: 6,
-              border: `1px solid ${row.match ? "#E2E8E4" : "rgba(220,107,107,0.3)"}`,
+              border: `1px solid ${row.match ? "#E2E8F0" : "rgba(220,107,107,0.3)"}`,
             }}
           >
             <span style={{ fontSize: 12, color: "#0D2137" }}>{row.desc}</span>
-            <span style={{ fontSize: 11, fontWeight: 700, color: row.match ? "#145F5A" : "#DC6B6B" }}>
+            <span style={{ fontSize: 11, fontWeight: 700, color: row.match ? "#1D4ED8" : "#DC6B6B" }}>
               {row.match ? "✓ Matched" : "! Review"}
             </span>
           </div>
@@ -106,7 +107,7 @@ const features = [
           >
             <span style={{ fontSize: 12, color: "rgba(255,255,255,0.5)" }}>{row.label}</span>
             <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-              <span style={{ fontSize: 11, fontWeight: 600, color: "#4EC994" }}>{row.trend}</span>
+              <span style={{ fontSize: 11, fontWeight: 600, color: "#60A5FA" }}>{row.trend}</span>
               <span style={{ fontSize: 13, fontWeight: 700, color: "#fff", fontFamily: "var(--font-dm-mono)" }}>{row.val}</span>
             </div>
           </div>
@@ -126,10 +127,10 @@ const features = [
       "Tax obligation tracking and reminders",
     ],
     visual: (
-      <div style={{ background: "#F5F7F5", borderRadius: 14, padding: 24 }}>
+      <div style={{ background: "#F5F7FA", borderRadius: 14, padding: 24 }}>
         <p style={{ margin: "0 0 14px", fontSize: 12, fontWeight: 700, color: "#64748B", textTransform: "uppercase", letterSpacing: "0.08em" }}>Insights Dashboard</p>
         {[
-          { label: "Cash runway", value: "14.2 months", colour: "#4EC994", icon: "↑" },
+          { label: "Cash runway", value: "14.2 months", colour: "#2563EB", icon: "↑" },
           { label: "Overdue invoices", value: "3 — $28,400", colour: "#E8A73E", icon: "!" },
           { label: "GST due 28 Oct", value: "$12,840", colour: "#64748B", icon: "◷" },
           { label: "Payroll variance", value: "+$2,100 vs. prior month", colour: "#DC6B6B", icon: "△" },
@@ -144,7 +145,7 @@ const features = [
               borderRadius: 8,
               padding: "10px 12px",
               marginBottom: 8,
-              border: "1px solid #E2E8E4",
+              border: "1px solid #E2E8F0",
             }}
           >
             <span
@@ -185,7 +186,7 @@ const features = [
       "Switch between entities without logging in again",
     ],
     visual: (
-      <div style={{ background: "#F5F7F5", borderRadius: 14, padding: 24 }}>
+      <div style={{ background: "#F5F7FA", borderRadius: 14, padding: 24 }}>
         <p style={{ margin: "0 0 14px", fontSize: 12, fontWeight: 700, color: "#64748B", textTransform: "uppercase", letterSpacing: "0.08em" }}>Group Overview</p>
         {[
           { name: "Accountant Genie Holdings Pty Ltd", revenue: "$284,600", status: "Active" },
@@ -199,7 +200,7 @@ const features = [
               borderRadius: 10,
               padding: "12px 14px",
               marginBottom: 8,
-              border: "1px solid #E2E8E4",
+              border: "1px solid #E2E8F0",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
@@ -207,14 +208,14 @@ const features = [
           >
             <div>
               <p style={{ margin: "0 0 2px", fontSize: 13, fontWeight: 700, color: "#0D2137" }}>{entity.name}</p>
-              <span style={{ fontSize: 11, fontWeight: 600, color: "#4EC994", background: "rgba(78,201,148,0.1)", padding: "2px 6px", borderRadius: 4 }}>{entity.status}</span>
+              <span style={{ fontSize: 11, fontWeight: 600, color: "#2563EB", background: "rgba(59,130,246,0.1)", padding: "2px 6px", borderRadius: 4 }}>{entity.status}</span>
             </div>
-            <span style={{ fontFamily: "var(--font-dm-mono)", fontSize: 14, fontWeight: 700, color: "#145F5A" }}>{entity.revenue}</span>
+            <span style={{ fontFamily: "var(--font-dm-mono)", fontSize: 14, fontWeight: 700, color: "#1D4ED8" }}>{entity.revenue}</span>
           </div>
         ))}
         <div style={{ marginTop: 12, padding: "12px 14px", background: "#0D2137", borderRadius: 10, display: "flex", justifyContent: "space-between" }}>
           <span style={{ fontSize: 13, fontWeight: 700, color: "rgba(255,255,255,0.7)" }}>Group Total</span>
-          <span style={{ fontFamily: "var(--font-dm-mono)", fontSize: 14, fontWeight: 700, color: "#4EC994" }}>$424,100</span>
+          <span style={{ fontFamily: "var(--font-dm-mono)", fontSize: 14, fontWeight: 700, color: "#60A5FA" }}>$424,100</span>
         </div>
       </div>
     ),
@@ -223,19 +224,30 @@ const features = [
 
 export default function Features() {
   return (
-    <div style={{ background: "#F5F7F5" }}>
+    <div style={{ background: "#F5F7FA" }}>
 
       {/* Hero */}
       <section
         style={{
-          background: "#fff",
-          borderBottom: "1px solid #E2E8E4",
+          background: "var(--grad-dark-band)",
           padding: "100px 32px 96px",
           textAlign: "center",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <div className="ab-enter" style={{ maxWidth: 640, margin: "0 auto" }}>
-          <Tag>Platform features</Tag>
+        <div
+          aria-hidden
+          className="ab-drift"
+          style={{
+            position: "absolute",
+            inset: "-25%",
+            backgroundImage: "radial-gradient(ellipse 40% 50% at 50% 45%, rgba(59,130,246,0.12) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+        <div className="ab-enter" style={{ position: "relative", maxWidth: 640, margin: "0 auto" }}>
+          <Tag tone="dark">Platform features</Tag>
           <h1
             style={{
               margin: "24px 0 20px",
@@ -243,12 +255,12 @@ export default function Features() {
               fontWeight: 800,
               lineHeight: 1.08,
               letterSpacing: "-0.03em",
-              color: "#0D2137",
+              color: "#fff",
             }}
           >
             Everything you need to simplify financial work.
           </h1>
-          <p style={{ fontSize: 18, color: "#64748B", lineHeight: 1.7, margin: "0 0 36px" }}>
+          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, margin: "0 0 36px" }}>
             Accountant Genie brings together the tools your finance team relies on every day — built for the Australian market, designed to work the way you do.
           </p>
           <Link
@@ -262,11 +274,12 @@ export default function Features() {
               textDecoration: "none",
               padding: "13px 26px",
               borderRadius: 10,
-              background: "#0D2137",
+              background: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
+              boxShadow: "0 4px 14px rgba(29,78,216,0.28)",
               transition: "background 0.2s ease",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#145F5A")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "#0D2137")}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #2563EB 0%, #1E3A8A 100%)")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)")}
           >
             Get Started
           </Link>
@@ -293,7 +306,7 @@ export default function Features() {
 
             {/* Text */}
             <Reveal delay={110} style={{ direction: "ltr" }}>
-              <span style={{ fontFamily: "var(--font-dm-mono)", fontSize: 12, color: "#CBD5D1" }}>{feat.num} — {feat.name}</span>
+              <span style={{ fontFamily: "var(--font-dm-mono)", fontSize: 12, color: "#CBD5E1" }}>{feat.num} — {feat.name}</span>
               <h2
                 style={{
                   margin: "12px 0 16px",
@@ -315,7 +328,7 @@ export default function Features() {
                         width: 20,
                         height: 20,
                         borderRadius: 6,
-                        background: "rgba(78,201,148,0.15)",
+                        background: "rgba(59,130,246,0.15)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -324,7 +337,7 @@ export default function Features() {
                       }}
                     >
                       <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                        <path d="M2 5l2 2 4-4" stroke="#145F5A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M2 5l2 2 4-4" stroke="#1D4ED8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
                     {b}
@@ -339,7 +352,7 @@ export default function Features() {
       {/* CTA */}
       <section
         style={{
-          background: "#0D2137",
+          background: "var(--grad-dark-band)",
           textAlign: "center",
           padding: "100px 32px",
           position: "relative",
@@ -352,7 +365,7 @@ export default function Features() {
           style={{
             position: "absolute",
             inset: "-25%",
-            backgroundImage: "radial-gradient(ellipse 45% 55% at 78% 50%, rgba(78,201,148,0.11) 0%, transparent 70%)",
+            backgroundImage: "radial-gradient(ellipse 45% 55% at 78% 50%, rgba(59,130,246,0.11) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -370,15 +383,15 @@ export default function Features() {
               fontFamily: "var(--font-jakarta)",
               fontWeight: 600,
               fontSize: 15,
-              color: "#0D2137",
+              color: "#fff",
               textDecoration: "none",
               padding: "14px 28px",
               borderRadius: 10,
-              background: "#4EC994",
+              background: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
               transition: "background 0.2s ease",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#3db882")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "#4EC994")}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #2563EB 0%, #1E3A8A 100%)")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)")}
           >
             Book a Demo
           </Link>
