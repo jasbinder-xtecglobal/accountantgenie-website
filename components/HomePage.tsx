@@ -6,7 +6,8 @@ import Reveal from "./Reveal";
 import SpotlightCard from "./SpotlightCard";
 
 /* ─── Reusable primitives ─── */
-function Tag({ children }: { children: React.ReactNode }) {
+function Tag({ children, tone = "light" }: { children: React.ReactNode; tone?: "light" | "dark" }) {
+  const onDark = tone === "dark";
   return (
     <span
       style={{
@@ -17,9 +18,9 @@ function Tag({ children }: { children: React.ReactNode }) {
         fontWeight: 700,
         letterSpacing: "0.1em",
         textTransform: "uppercase",
-        color: "#145F5A",
-        background: "rgba(78,201,148,0.12)",
-        border: "1px solid rgba(78,201,148,0.25)",
+        color: onDark ? "#4EC994" : "#145F5A",
+        background: onDark ? "rgba(78,201,148,0.14)" : "rgba(78,201,148,0.12)",
+        border: `1px solid rgba(78,201,148,${onDark ? 0.38 : 0.25})`,
         padding: "5px 12px",
         borderRadius: 100,
       }}
@@ -607,7 +608,7 @@ export default function Home() {
         >
           {/* Left */}
           <Reveal>
-            <Tag>The Accountant Genie way</Tag>
+            <Tag tone="dark">The Accountant Genie way</Tag>
             <h2
               style={{
                 margin: "24px 0 24px",
@@ -1090,7 +1091,7 @@ export default function Home() {
             position: "relative",
           }}
         >
-          <Tag>Ready to start?</Tag>
+          <Tag tone="dark">Ready to start?</Tag>
           <h2
             style={{
               margin: "24px 0 20px",

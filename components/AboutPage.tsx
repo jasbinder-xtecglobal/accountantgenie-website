@@ -4,7 +4,8 @@ import Link from "next/link";
 import Reveal from "./Reveal";
 import SpotlightCard from "./SpotlightCard";
 
-function Tag({ children }: { children: React.ReactNode }) {
+function Tag({ children, tone = "light" }: { children: React.ReactNode; tone?: "light" | "dark" }) {
+  const onDark = tone === "dark";
   return (
     <span
       style={{
@@ -15,9 +16,9 @@ function Tag({ children }: { children: React.ReactNode }) {
         fontWeight: 700,
         letterSpacing: "0.1em",
         textTransform: "uppercase",
-        color: "#145F5A",
-        background: "rgba(78,201,148,0.12)",
-        border: "1px solid rgba(78,201,148,0.25)",
+        color: onDark ? "#4EC994" : "#145F5A",
+        background: onDark ? "rgba(78,201,148,0.14)" : "rgba(78,201,148,0.12)",
+        border: `1px solid rgba(78,201,148,${onDark ? 0.38 : 0.25})`,
         padding: "5px 12px",
         borderRadius: 100,
       }}
@@ -52,7 +53,7 @@ export default function About() {
           }}
         />
         <div className="ab-enter" style={{ position: "relative", maxWidth: 700, margin: "0 auto" }}>
-          <Tag>About Accountant Genie</Tag>
+          <Tag tone="dark">About Accountant Genie</Tag>
           <h1
             style={{
               margin: "24px 0 20px",
