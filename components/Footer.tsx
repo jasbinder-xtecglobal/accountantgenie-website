@@ -135,7 +135,7 @@ export default function Footer() {
           right: 0,
           height: 1,
           background:
-            "linear-gradient(90deg, rgba(59,130,246,0) 0%, rgba(96,165,250,0.55) 50%, rgba(59,130,246,0) 100%)",
+            "linear-gradient(90deg, rgba(34,180,253,0) 0%, rgba(34,180,253,0.6) 50%, rgba(34,180,253,0) 100%)",
         }}
       />
       {/* Ambient glow */}
@@ -200,16 +200,16 @@ export default function Footer() {
                 textDecoration: "none",
                 padding: "12px 22px",
                 borderRadius: 10,
-                background: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
+                background: "linear-gradient(135deg, #0A66F5 0%, #0233A8 100%)",
                 boxShadow: "0 8px 24px rgba(59,130,246,0.28)",
                 transition: "background 0.15s ease, transform 0.15s ease",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "linear-gradient(135deg, #2563EB 0%, #1E3A8A 100%)";
+                e.currentTarget.style.background = "linear-gradient(135deg, #0855D8 0%, #01277F 100%)";
                 e.currentTarget.style.transform = "translateY(-1px)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)";
+                e.currentTarget.style.background = "linear-gradient(135deg, #0A66F5 0%, #0233A8 100%)";
                 e.currentTarget.style.transform = "none";
               }}
             >
@@ -263,9 +263,9 @@ export default function Footer() {
               <Image
                 src="/logo-white.svg"
                 alt="Accountant Genie"
-                width={250}
-                height={32}
-                style={{ height: 32, width: "auto", display: "block" }}
+                width={174}
+                height={68}
+                style={{ height: 68, width: "auto", display: "block" }}
               />
             </Link>
             <p style={{ fontSize: 14, color: MUTED, lineHeight: 1.75, margin: "0 0 24px" }}>

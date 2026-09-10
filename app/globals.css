@@ -28,8 +28,10 @@
 /* Primary CTA gradient. Kept in sync with the inline button styles in
    Navbar / Footer / HomePage / AboutPage / FeaturesPage / ContactPage. */
 :root {
-  --grad-cta: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-  --grad-cta-hover: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+  --grad-cta: linear-gradient(135deg, #0a66f5 0%, #0233a8 100%);
+  --grad-cta-hover: linear-gradient(135deg, #0855d8 0%, #01277f 100%);
+  /* the logo's own gradient, for decorative accents */
+  --grad-logo: linear-gradient(180deg, #22b4fd 0%, #035ae4 100%);
 
   /* The two dark surfaces. Every full-bleed navy band on every page uses
      --grad-dark-band; it resolves to #0d2137 at 100% so a band sitting
@@ -70,7 +72,7 @@ body {
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 84px;
+  scroll-padding-top: 116px;
 }
 
 /* Focus ring */

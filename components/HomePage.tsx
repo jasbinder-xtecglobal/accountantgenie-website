@@ -47,8 +47,8 @@ function PrimaryBtn({ href, children }: { href: string; children: React.ReactNod
         padding: "13px 26px",
         borderRadius: 10,
         background: hov
-          ? "linear-gradient(135deg, #2563EB 0%, #1E3A8A 100%)"
-          : "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
+          ? "linear-gradient(135deg, #0855D8 0%, #01277F 100%)"
+          : "linear-gradient(135deg, #0A66F5 0%, #0233A8 100%)",
         transform: hov ? "translateY(-2px)" : "none",
         boxShadow: hov ? "0 12px 28px rgba(29,78,216,0.35)" : "0 0 0 rgba(29,78,216,0)",
         transition:
@@ -373,7 +373,7 @@ export default function Home() {
               Financial clarity,{" "}
               <span
                 style={{
-                  background: "linear-gradient(100deg, #1D4ED8 0%, #2563EB 55%, #3B82F6 100%)",
+                  background: "linear-gradient(100deg, #035AE4 0%, #0A6FF0 55%, #0A8FFA 100%)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   color: "transparent",
@@ -928,7 +928,7 @@ export default function Home() {
                 left: "calc(16.67% + 32px)",
                 right: "calc(16.67% + 32px)",
                 height: 1,
-                background: "linear-gradient(to right, #3B82F6, #1D4ED8, #3B82F6)",
+                background: "linear-gradient(to right, #22B4FD, #035AE4, #22B4FD)",
                 opacity: 0.3,
               }}
               className="step-connector"
@@ -1123,17 +1123,17 @@ export default function Home() {
                 textDecoration: "none",
                 padding: "14px 28px",
                 borderRadius: 10,
-                background: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
+                background: "linear-gradient(135deg, #0A66F5 0%, #0233A8 100%)",
                 transition: "background 0.2s ease, transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease",
               }}
               className="ab-sweep"
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "linear-gradient(135deg, #2563EB 0%, #1E3A8A 100%)";
+                e.currentTarget.style.background = "linear-gradient(135deg, #0855D8 0%, #01277F 100%)";
                 e.currentTarget.style.transform = "translateY(-2px)";
                 e.currentTarget.style.boxShadow = "0 12px 32px rgba(59,130,246,0.28)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)";
+                e.currentTarget.style.background = "linear-gradient(135deg, #0A66F5 0%, #0233A8 100%)";
                 e.currentTarget.style.transform = "none";
                 e.currentTarget.style.boxShadow = "none";
               }}

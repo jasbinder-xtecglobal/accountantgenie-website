@@ -274,12 +274,12 @@ export default function Features() {
               textDecoration: "none",
               padding: "13px 26px",
               borderRadius: 10,
-              background: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
+              background: "linear-gradient(135deg, #0A66F5 0%, #0233A8 100%)",
               boxShadow: "0 4px 14px rgba(29,78,216,0.28)",
               transition: "background 0.2s ease",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #2563EB 0%, #1E3A8A 100%)")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)")}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #0855D8 0%, #01277F 100%)")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #0A66F5 0%, #0233A8 100%)")}
           >
             Get Started
           </Link>
@@ -387,11 +387,11 @@ export default function Features() {
               textDecoration: "none",
               padding: "14px 28px",
               borderRadius: 10,
-              background: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
+              background: "linear-gradient(135deg, #0A66F5 0%, #0233A8 100%)",
               transition: "background 0.2s ease",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #2563EB 0%, #1E3A8A 100%)")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)")}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #0855D8 0%, #01277F 100%)")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "linear-gradient(135deg, #0A66F5 0%, #0233A8 100%)")}
           >
             Book a Demo
           </Link>

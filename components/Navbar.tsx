@@ -7,8 +7,8 @@ import { usePathname } from "next/navigation";
 
 const NAVY = "#0D2137";
 const MUTED = "#64748B";
-const GRAD = "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)";
-const GRAD_HOVER = "linear-gradient(135deg, #2563EB 0%, #1E3A8A 100%)";
+const GRAD = "linear-gradient(135deg, #0A66F5 0%, #0233A8 100%)";
+const GRAD_HOVER = "linear-gradient(135deg, #0855D8 0%, #01277F 100%)";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -122,10 +122,8 @@ export default function Navbar() {
         position: "sticky",
         top: 0,
         zIndex: 50,
-        transition: "background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease",
-        background: scrolled ? "rgba(245, 247, 250, 0.72)" : "transparent",
-        backdropFilter: scrolled ? "blur(16px) saturate(180%)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(16px) saturate(180%)" : "none",
+        transition: "box-shadow 0.3s ease",
+        background: "#fff",
         boxShadow: scrolled
           ? "0 1px 0 0 rgba(226,232,240,0.9), 0 8px 24px rgba(13,33,55,0.04)"
           : "none",
@@ -142,7 +140,7 @@ export default function Navbar() {
           height: 2,
           transformOrigin: "left center",
           transform: `scaleX(${progress})`,
-          background: "linear-gradient(90deg, #1D4ED8, #3B82F6)",
+          background: "linear-gradient(90deg, #035AE4, #22B4FD)",
           opacity: scrolled ? 1 : 0,
           transition: "opacity 0.3s ease",
         }}
@@ -153,7 +151,7 @@ export default function Navbar() {
           maxWidth: 1280,
           margin: "0 auto",
           padding: "0 32px",
-          height: 72,
+          height: 104,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -170,10 +168,10 @@ export default function Navbar() {
           <Image
             src="/logo.svg"
             alt="Accountant Genie"
-            width={250}
-            height={32}
+            width={174}
+            height={68}
             priority
-            style={{ height: 32, width: "auto", display: "block" }}
+            style={{ height: 68, width: "auto", display: "block" }}
           />
         </Link>
 
