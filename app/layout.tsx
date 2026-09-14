@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, DM_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { COMING_SOON } from "@/lib/site";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -25,6 +26,8 @@ export const metadata: Metadata = {
   },
   description:
     "Accountant Genie brings your financial workflows into one intelligent platform. Less manual work, fewer errors, and the real-time visibility your business needs to move forward.",
+  // Keep the holding page out of search results until launch.
+  ...(COMING_SOON && { robots: { index: false, follow: false } }),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -37,12 +40,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </noscript>
       </head>
       <body className="min-h-full">
-        <div className="flex flex-col min-h-full">
-          <ScrollToTop />
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+        {COMING_SOON ? (
+          /* Holding page only — no site chrome, nothing else to navigate to. */
+          children
+        ) : (
+          <div className="flex flex-col min-h-full">
+            <ScrollToTop />
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        )}
       </body>
     </html>
   );
