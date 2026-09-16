@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, ChevronDown, ChevronRight, Clock, Mail, Printer, Search } from "lucide-react";
 import { POLICY_ICONS } from "./policyIcons";
 import { CONTACT_EMAIL, policies, type Block, type Policy, type Term } from "@/lib/policies";
+import { COMING_SOON } from "@/lib/site";
 
 /* ──────────────────────────────────────────────
    Helpers
@@ -16,6 +17,11 @@ const MINT = "#2563EB";
 const TEXT = "#3F4C5A";
 const MUTED = "#64748B";
 const LINE = "#E2E8F0";
+
+/* Sticky offset for the sidebar. With the Navbar hidden (coming-soon mode)
+   it matches the page's top padding so the sidebar lines up with the
+   article card; otherwise it clears the sticky Navbar. */
+const SIDEBAR_TOP = COMING_SOON ? 28 : 84;
 
 function isTerms(b: Block): b is { terms: Term[] } {
   return typeof b === "object" && !Array.isArray(b) && "terms" in b;
@@ -220,7 +226,7 @@ export default function PolicyPage({ policy }: { policy: Policy }) {
         >
           {/* ── Sidebar ── */}
           {hasContent && (
-            <aside className="pp-side" style={{ position: "sticky", top: 84, display: "flex", flexDirection: "column", gap: 16 }}>
+            <aside className="pp-side" style={{ position: "sticky", top: SIDEBAR_TOP, display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={{ ...card, padding: 14 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "4px 4px 12px" }}>
                   <span
