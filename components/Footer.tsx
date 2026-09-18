@@ -354,7 +354,17 @@ export default function Footer() {
               }}
             >
               <Sparkles size={12} strokeWidth={2.2} color="#60A5FA" aria-hidden />
-              Powered by <span style={{ color: "#60A5FA", fontWeight: 600 }}>Sparkview Pty Ltd</span>
+              Powered by{" "}
+              <a
+                href="https://sparkview.com.au/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#60A5FA", fontWeight: 600, textDecoration: "none" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#60A5FA")}
+              >
+                Sparkview Pty Ltd
+              </a>
             </span>
           </div>
 

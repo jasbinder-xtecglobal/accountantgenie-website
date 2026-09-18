@@ -610,7 +610,16 @@ export default function ComingSoon() {
           <span>© 2026 Accountant Genie</span>
           <span aria-hidden style={{ opacity: 0.5 }}>·</span>
           <span>
-            Powered by <span style={{ color: BLUE_SOFT, fontWeight: 600 }}>Sparkview Pty Ltd</span>
+            Powered by{" "}
+            <a
+              href="https://sparkview.com.au/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cs-footer-link"
+              style={{ color: BLUE_SOFT, fontWeight: 600, textDecoration: "none" }}
+            >
+              Sparkview Pty Ltd
+            </a>
           </span>
           <span aria-hidden className="cs-footer-dot" style={{ opacity: 0.5 }}>·</span>
           <Link
