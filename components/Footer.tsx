@@ -354,7 +354,7 @@ export default function Footer() {
               }}
             >
               <Sparkles size={12} strokeWidth={2.2} color="#60A5FA" aria-hidden />
-              Powered by <span style={{ color: "#60A5FA", fontWeight: 600 }}>Sparkview</span>
+              Powered by <span style={{ color: "#60A5FA", fontWeight: 600 }}>Sparkview Pty Ltd</span>
             </span>
           </div>
 

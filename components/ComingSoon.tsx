@@ -577,6 +577,52 @@ export default function ComingSoon() {
         </div>
       </section>
 
+      {/* Footer — pinned to the bottom edge, fading in over the cut-off dashboard */}
+      <footer
+        className="cs-footer"
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 2,
+          padding: "56px 32px 18px",
+          background: "linear-gradient(180deg, rgba(3,9,24,0) 0%, rgba(3,9,24,0.92) 40%, #030918 100%)",
+          pointerEvents: "none",
+        }}
+      >
+        <div
+          className="cs-wrap cs-footer-row"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 10,
+            flexWrap: "wrap",
+            textAlign: "center",
+            fontSize: 13.5,
+            fontWeight: 500,
+            color: "rgba(255,255,255,0.86)",
+            textShadow: "0 1px 12px rgba(0,0,0,0.6)",
+            pointerEvents: "auto",
+          }}
+        >
+          <span>© 2026 Accountant Genie</span>
+          <span aria-hidden style={{ opacity: 0.5 }}>·</span>
+          <span>
+            Powered by <span style={{ color: BLUE_SOFT, fontWeight: 600 }}>Sparkview Pty Ltd</span>
+          </span>
+          <span aria-hidden className="cs-footer-dot" style={{ opacity: 0.5 }}>·</span>
+          <Link
+            href="/policies"
+            className="cs-footer-link"
+            style={{ color: "#fff", textDecoration: "underline", textUnderlineOffset: 3, textDecorationColor: "rgba(255,255,255,0.35)", fontWeight: 600 }}
+          >
+            Privacy &amp; Policies
+          </Link>
+        </div>
+      </footer>
+
       <style>{`
         .cs-wrap { width: 100%; max-width: 1440px; margin: 0 auto; }
         .cs-rise { animation: ab-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
@@ -590,6 +636,8 @@ export default function ComingSoon() {
         }
         .cs-draw { stroke-dasharray: 900; stroke-dashoffset: 900; animation: ab-draw 2s 0.8s cubic-bezier(0.22,1,0.36,1) forwards; }
         .cs-divider { width: 1px; height: 48px; background: rgba(255,255,255,0.14); margin: 0 40px; flex-shrink: 0; }
+        .cs-footer-link { transition: color 0.15s ease; }
+        .cs-footer-link:hover { color: #fff !important; text-decoration-color: #7CC0FF !important; }
 
         /* Product visual: fixed ${DASH_W}px layout, scaled to the column width.
            .cs-visual is a size container so 100cqw = its width. The stage
@@ -645,6 +693,9 @@ export default function ComingSoon() {
           .cs-feature > span:last-child > span:last-child { font-size: 13px !important; line-height: 1.4; }
           .cs-divider { display: block; height: 140px; margin: 0 !important; align-self: stretch; }
           .cs-showcase { margin-top: 44px !important; }
+          .cs-footer { padding: 36px 24px 14px !important; }
+          .cs-footer-row { font-size: 12.5px !important; row-gap: 6px !important; }
+          .cs-footer-dot { display: none; }
           .cs-visual { padding: 0 20px !important; }
           /* Compact dashboard, cut off by the page edge, glow bleeding past the sides */
           .cs-stage { height: calc(100cqw * 0.95); min-height: 0; overflow: hidden; padding: 40px 80px 0; margin: 0 -80px; }
